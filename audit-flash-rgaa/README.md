@@ -2,7 +2,7 @@
 
 Autrice de l’outil : [Copsaé](https://www.copsae.fr/)
 
-Cette grille a été réalisé avec LibreOffice Calc. Nous ne garantissons pas son fonctionnement avec Microsoft Excel.
+Cette grille a été réalisée avec LibreOffice Calc. Nous ne garantissons pas son fonctionnement avec Microsoft Excel.
 
 ## Qu’est-ce qu’un audit flash ?
 
