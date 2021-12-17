@@ -7,7 +7,7 @@ Vous pouvez vous les approprier à votre tour selon [la licence établie](LICENS
 Vous trouverez plus de détails dans le « README.md » de chaque dossier :
 
 * [Grille d’audit de conformité au RGAA](/audit-conformite-rgaa/README.md) ;
-* [Grille d’audit flash basé sur le RGAA](/audit-flash-rgaa/README.md).
+* [Grille d’audit flash (*checklist*) basé sur le RGAA](/audit-flash-rgaa/README.md).
 
 ## Liste d’outils d’aide pour les audits
 
