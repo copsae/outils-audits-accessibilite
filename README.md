@@ -33,7 +33,7 @@ Zoom navigateur | Outil navigateur natif | <kbd>CTRL</kbd> + <kbd>+</kbd> (6 foi
 
 ## Fournir un document de préconisations, en plus de la grille d’audit
 
-Nous déconseillons de mettre les préconisations de correction pour les anomalies d’accessibilité dans la grille d’audit (quelque soit l’audit). En effet, cela ferait des volumes de texte trop importants dans des cases de tableur et ce n’est pas approprié : ce ne sera pas lisible, la mise en forme est difficilement possible, etc.
+Nous déconseillons de mettre les préconisations de correction pour les anomalies d’accessibilité dans la grille d’audit (quelque soit l’audit). En effet, la nature et la longueur des textes rédigés ne sont pas appropriés pour des cases de tableur : ce ne sera pas lisible, la mise en forme est difficilement possible, etc.
 
 Nous conseillons donc de mettre les préconisations dans un (ou plusieurs) document séparé (ou bien dans l’outil de gestion des tickets du projet).
 
