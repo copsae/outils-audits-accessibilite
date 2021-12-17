@@ -24,4 +24,4 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
 
 Certains points restent à modifier :
 
-* Ajout d’un moyen de signalement des [exemptions](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenus-exempt%C3%A9s) (différentes des [dérogations](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#d%C3%A9rogation-pour-charge-disproportionn%C3%A9e))
+* Ajout d’un moyen de signalement des [exemptions](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenus-exempt%C3%A9s) (différentes des [dérogations](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#d%C3%A9rogation-pour-charge-disproportionn%C3%A9e)). Idée : ajouter une colonne « Exemption » et une autre « Commentaire exemption » car on déroge ou exempte un contenu donc il faut pouvoir avoir les 2 à la fois (on peut avoir un contenu exempté, un contenu dérogé, un contenu ni exempté ni dérogé pour un même critère)
