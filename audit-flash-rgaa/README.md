@@ -1,4 +1,4 @@
-# Grille d’audit flash (checklist) basé sur le RGAA
+# Grille d’audit flash (*checklist*) basé sur le RGAA
 
 Autrice de l’outil : [Copsaé](https://www.copsae.fr/)
 
