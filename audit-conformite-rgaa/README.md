@@ -15,10 +15,10 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
     * En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
 * Onglet « Échantillon » : ajout d’une colonne « Commentaire » ;
 * Renommage de l’onglet « Critères » en « Critères (modèle) » ;
-* Passage de tous les textes en police Liberation Sans et en taille 10pt minimum (illisible en taille 8pt) ;
+* Passage de tous les textes en police Liberation Sans et en taille 10pt minimum au lieu de 8pt ;
 * Rétablissement des bordures de cellules (qui avaient disparues par endroit) ;
 * Tri/ménage dans les styles du document ;
-* Modification des couleurs de thème mais aussi des statuts (le statut NA avait un ratio de contraste insuffisant, par ailleurs).
+* Modification des couleurs de thème mais aussi des statuts (note : le statut NA avait un ratio de contraste insuffisant).
 
 ## Points restants à modifier
 
