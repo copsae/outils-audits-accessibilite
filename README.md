@@ -9,6 +9,14 @@ Vous trouverez plus de détails dans le « README.md » de chaque dossier :
 * [Grille d’audit de conformité au RGAA](/audit-conformite-rgaa/) ;
 * [Grille d’audit flash (*checklist*) basé sur le RGAA](/audit-flash-rgaa/).
 
+## Sommaire de ce document
+
+- [Liste d’outils d’aide pour les audits](#outils)
+- [Fournir un document de préconisations, en plus de la grille d’audit](#doc-preco)
+- [Estimer l’impact d’une anomalie d’accessibilité sur les utilisateurs et utilisatrices](#impact)
+
+<a id="outils"></a>
+
 ## Liste d’outils d’aide pour les audits
 
 Nom de l’outil | Type d’outil | Information 
@@ -30,6 +38,8 @@ Vue adaptative du navigateur | Outil navigateur natif | <kbd>CTRL</kbd> + <kbd>M
 WCAG Contrast checker | Extension de navigateur | [Extension Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)
 Web Developer toolbar | Extension de navigateur | [Extension Firefox](https://addons.mozilla.org/fr/firefox/addon/web-developer/)
 Zoom navigateur | Outil navigateur natif | <kbd>CTRL</kbd> + <kbd>+</kbd> (6 fois pour 200%)
+
+<a id="doc-preco"></a>
 
 ## Fournir un document de préconisations, en plus de la grille d’audit
 
@@ -55,3 +65,15 @@ Voici quelques points qui nous semblent importants :
 - Éviter les trop gros tickets : voir si ça ne peut pas être découpé en plusieurs plus petits. Un ticket trop gros sera généralement partiellement corrigé car il sera difficile à suivre.
 
 Dans le cadre d’un audit de conformité, la DINUM propose un [modèle de rapport d’audit](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/kit/) qui peut servir comme structure de base du document. Libre à nous, ensuite, de rédiger les préconisations de la façon qui nous semble la plus appropriée.
+
+<a id="impact"></a>
+
+## Estimer l’impact d’une anomalie d’accessibilité sur les utilisateurs et utilisatrices
+
+Estimer l’impact d’une anomalie d’accessibilité sur les utilisateurs et utilisatrices n’est pas forcément facile. Nous avons essayé de définir 3 niveaux d’impact comme suit :
+
+- **Bloquant** = impact bloquant : le problème empêche l’accès à une information ou un service pour au moins un « type de handicap » (exemple : un bouton n’est pas utilisable au clavier et il n’y a aucun moyen alternatif pour obtenir l’information cachée derrière ce bouton) ;
+- **Majeur** = impact fort : le problème est gênant pour accéder à une information ou un service pour au moins un « type de handicap » (exemple : visuellement, le contenu est hiérarchisé avec des titres mais ce sont tous des paragraphes dans le code) ;
+- **Mineur** = impact faible : le problème ne gêne pas l’accès à l’information (exemple : l’élement `<title>` ne contient pas le nom du site mais le nom du site est bien présent dans l’en-tête de celui-ci) ou le problème a un impact inexistant tant que le code reste en l’état mais présente un risque (exemple : un identifiant dupliqué lorsque cet identifiant n’est associé à aucun autre élément techniquement (champs de formulaire, ancre, `aria-labelledby`, `aria-describedby`…)).
+
+Ces définitions peuvent être amenées à changer avec le temps (selon leur pertinence évaluée à l’usage, selon des discussions avec d’autres personnes expertes, etc.). Ainsi, elles sont précisées dans le mode d’emploi de chaque grille d’audit pour que la lecture d’un audit réalisé avec une éventuelle version antérieure de ces règles ne soit pas faussée.
