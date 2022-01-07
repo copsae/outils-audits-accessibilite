@@ -59,7 +59,7 @@ Voici quelques points qui nous semblent importants :
     - Critère(s) RGAA invalidé(s)
     - Préconisation de correction
         - Éventuellement : exemple de code corrigé
-- **Certaines anomalies peuvent porter sur plusieurs critères RGAA invalidés à la fois** si cela se justifie en termes de taille du ticket (attention : éviter si le ticket devient trop gros), de métiers concernés (design, développement, contribution…)…
+- **Certaines anomalies peuvent porter sur plusieurs critères RGAA invalidés à la fois** si cela se justifie en termes de taille du ticket (attention : à éviter si le ticket devient trop gros), de métiers concernés (design, développement, contribution…)…
     - Exemple 1 : un bouton qui a un défaut de contraste (design) + un défaut de nom (développement) = 2 tickets séparés
     - Exemple 2 : un bouton qui n’a pas la bonne sémantique (développement) + un défaut de nom (développement) = un seul ticket
 - **Éviter les trop gros tickets** : voir si ça ne peut pas être découpé en plusieurs plus petits. Un ticket trop gros sera généralement partiellement corrigé car il sera difficile à suivre.
