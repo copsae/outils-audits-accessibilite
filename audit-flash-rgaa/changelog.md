@@ -2,7 +2,7 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
-## Version 1.3 – 27 janvier 2022
+## Version 1.3 — 27 janvier 2022
 
 Correction des noms des thématiques « Structuration de l’information » et « Présentation de l’information » (il manquait « de l’information »)
 
