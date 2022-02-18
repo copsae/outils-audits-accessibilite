@@ -2,6 +2,12 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.4 — 18 février 2022
+
+- Onglets « Calculs » : correction des formules en colonne B ;
+- Onglets de pages : correction des formules qui font, désormais, bien référence à l’onglet modèle ;
+- Ajout, pour chaque onglet de page, de 10 lignes regroupées sous le libellé « Autres critères invalidés » + modification de la documentation pour expliquer ce point.
+
 ## Version 1.3 — 27 janvier 2022
 
 Correction des noms des thématiques « Structuration de l’information » et « Présentation de l’information » (il manquait « de l’information »)
