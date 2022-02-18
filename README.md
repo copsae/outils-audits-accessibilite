@@ -35,6 +35,7 @@ PDF Accessibility Checker | Logiciel | [Télécharger chez l’éditeur](https:/
 Souris | Périphérique | -
 Stylus | Extension de navigateur | [Extension Firefox](https://addons.mozilla.org/fr/firefox/addon/styl-us/)
 The Contrast Triangle | Application web | [Voir l’application web](https://contrast-triangle.com/)
+Validateur nu HTML checker + bookmarklet *Check for WCAG 2.0 parsing compliance* | Site web | [Nu HTML checker](https://validator.w3.org/nu/) + bookmarklet disponible dans la page « *[About](https://validator.w3.org/nu/about.html)* »
 Vue adaptative du navigateur | Outil navigateur natif | <kbd>CTRL</kbd> + <kbd>Maj</kbd> + <kbd>M</kbd> sur Firefox
 WCAG Contrast checker | Extension de navigateur | [Extension Firefox](https://addons.mozilla.org/fr/firefox/addon/wcag-contrast-checker/)
 Web Developer toolbar | Extension de navigateur | [Extension Firefox](https://addons.mozilla.org/fr/firefox/addon/web-developer/)
