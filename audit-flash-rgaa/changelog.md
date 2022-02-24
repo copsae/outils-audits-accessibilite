@@ -2,6 +2,11 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.5 — 24 février 2022
+
+- Ajustement des formules de références aux onglets (il manquait un signe $) ;
+- Ajout de la documentation concernant l’ajout de pages à auditer dans la grille.
+
 ## Version 1.4 — 18 février 2022
 
 - Onglets « Calculs » : correction des formules en colonne B ;
