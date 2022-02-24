@@ -6,25 +6,29 @@ La grille d’audit est basée sur [la grille officielle de la DINUM disponible 
 
 Afin de faciliter notre travail d'audit, nous avons modifié les points suivants :
 
-* Pour les onglets d’audit :
-    * Ajout d’une colonne « Tests » (affichage de l’ensemble des tests RGAA pour chaque critère) ;
-    * Ajout d’une colonne « Niveau » (A ou AA) ;
-    * Ajout d’une colonne « Comment tester (outils) » ;
-    * Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés (préconisations de correction dans un fichier séparé) » ;
-    * Ajout des filtres de colonnes ;
-    * En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
-* Onglet « Échantillon » : ajout d’une colonne « Commentaire » ;
-* Renommage de l’onglet « Critères » en « Critères (modèle) » ;
-* Passage de tous les textes en police Liberation Sans et en taille 10pt minimum au lieu de 8pt ;
-* Rétablissement des bordures de cellules (qui avaient disparues par endroit) ;
-* Tri/ménage dans les styles du document ;
-* Modification des couleurs de thème mais aussi des statuts (note : le statut NA avait un ratio de contraste insuffisant).
+- Ajout d’une partie « Notes complémentaires ajoutées par Copsaé » dans l’onglet « Mode_d'emploi » ;
+- Pour les onglets d’audit :
+    - Ajout d’une colonne « Tests » (affichage de l’ensemble des tests RGAA pour chaque critère) ;
+    - Ajout d’une colonne « Niveau » (A ou AA) ;
+    - Ajout d’une colonne « Comment tester (outils) » ;
+    - Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés (préconisations de correction dans un fichier séparé) » ;
+    - Ajout des filtres de colonnes ;
+    - En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
+- Onglet « Échantillon » : ajout d’une colonne « Commentaire » ;
+- Renommage de l’onglet « Critères » en « Critères (modèle) » ;
+- Passage de tous les textes en police Liberation Sans et en taille 10pt minimum au lieu de 8pt ;
+- Rétablissement des bordures de cellules (qui avaient disparues par endroit) ;
+- Tri/ménage dans les styles du document ;
+- Modification des couleurs de thème mais aussi des statuts (note : le statut NA avait un ratio de contraste insuffisant) ;
+- Audit des éléments transverses (voir la section « Ajouts au mode d’emploi » pour plus d’informations) :
+    - Dans l’onglet « Échantillon », décalage des lignes pour faire apparaître « Éléments transverses » en P01 ;
+    - Dans l’onglet « Synthèse », suppression des cellules B17 et B18 pour le calcul du taux moyen.
 
 ## Points restants à modifier
 
 Certains points restent à modifier :
 
-* Ajout d’un moyen de signalement des [exemptions](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenus-exempt%C3%A9s) (différentes des [dérogations](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#d%C3%A9rogation-pour-charge-disproportionn%C3%A9e)). Idée : ajouter une colonne « Exemption » et une autre « Commentaire exemption » car on déroge ou exempte un contenu donc il faut pouvoir avoir les 2 à la fois (on peut avoir un contenu exempté, un contenu dérogé, un contenu ni exempté ni dérogé pour un même critère)
+- Ajout d’un moyen de signalement des [exemptions](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenus-exempt%C3%A9s) (différentes des [dérogations](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#d%C3%A9rogation-pour-charge-disproportionn%C3%A9e)). Idée : ajouter une colonne « Exemption » et une autre « Commentaire exemption » car on déroge ou exempte un contenu donc il faut pouvoir avoir les 2 à la fois (on peut avoir un contenu exempté, un contenu dérogé, un contenu ni exempté ni dérogé pour un même critère)
 
 ## Ajouts au mode d’emploi
 
@@ -32,3 +36,6 @@ Certains points restent à modifier :
     - Chaque problème peut avoir un impact différent sur les utilisateurs et utilisatrices. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)).
     - Indiquer ensuite le problème relevé mais sans faire la préconisation de correction. Un tableur n’est pas approprié pour y faire figurer autant d’informations. Il vaut mieux mettre les préconisations dans un document texte séparé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#doc-preco)).
 - **Si la règle est non applicable pour raison d’exemption ou dérogation**, il est préférable d’indiquer les problèmes concernés dans la colonne listant les problèmes relevés en précisant quel problème concerne du contenu exempté ou dérogé (par exemple, en indiquant `[Exempté]` ou `[Dérogé]` en amont).
+- **Auditer les éléments transverses :** Nous utilisons l’onglet « P01 » pour auditer les éléments transverses au site (en-tête, pied de page, fil d’Ariane…). Les éléments concernés doivent être listés dans la colonne « Commentaire » de l’onglet « Échantillon ». Cela nous permet d’éviter d’auditer plusieurs fois les mêmes éléments.
+
+    Il y a ensuite deux possibilités dans la méthode de travail : soit les statuts des critères sont ensuite propagés manuellement aux autres pages avant de les auditer (en indiquant « Voir transverse » dans la colonne listant les problèmes relevés), soit **on ne propage pas ces statuts transverses et cela signifie que le taux moyen ne peut être calculé puisque le score par page sera faussé**. Pour des raisons de facilité et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait le deuxième choix et avons décidé de retirer de la grille la formule de calcul du taux moyen.
