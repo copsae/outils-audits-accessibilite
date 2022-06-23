@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.7 — 23 juin 2022
+
+Correction des statuts pour les critères complémentaires (restés sur l’ancien modèle…)
+
 ## Version 1.6 — 13 juin 2022
 
 - Modification des statuts pour faciliter la saisie au clavier :
