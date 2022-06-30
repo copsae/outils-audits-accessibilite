@@ -2,9 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
-## Version 1.3 — 29 juin 2022
+## Version 1.3 — 30 juin 2022
 
-Correction des formules de références à d’autres onglets dans les pages (corrige l’incrémentation des références d’onglets lors de la duplication d’une page)
+- Correction des formules de références à d’autres onglets dans les pages (corrige l’incrémentation des références d’onglets lors de la duplication d’une page) ;
+- Ajout de la documentation pour l’ajout d’une page à auditer.
 
 ## Version 1.2 — 24 février 2022
 
