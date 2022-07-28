@@ -14,6 +14,7 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
     - Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés (préconisations de correction dans un fichier séparé) » ;
     - Ajout des filtres de colonnes ;
     - En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
+    - Correction des formules en A2 pour les P10 à P20 qui ne référençaient pas la bonne ligne de l’échantillon.
 - Onglet « Échantillon » : ajout d’une colonne « Commentaire » ;
 - Renommage de l’onglet « Critères » en « Critères (modèle) » ;
 - Passage de tous les textes en police Liberation Sans et en taille 10pt minimum au lieu de 8pt ;
@@ -26,6 +27,7 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
 - Corrections pour l’ajout d’onglets (pages à auditer) :
     - Correction des formules : ajout du signe `$` devant les noms d’onglets dans les formules afin qu’une duplication d’onglet n’entraîne pas une incrémentation dans les formules ;
     - Ajout de la documentation dans l’onglet « Mode d’emploi » pour savoir exactement comment ajouter une page.
+- Dans l’onglet « Synthèse », utilisation de la formule `ARRONDI()` pour arrondir le taux de conformité à 2 chiffres après la virgule.
 
 ## Points restants à modifier
 
@@ -41,7 +43,8 @@ Certains points restent à modifier :
 - **Si la règle est non applicable pour raison d’exemption ou dérogation**, il est préférable d’indiquer les problèmes concernés dans la colonne listant les problèmes relevés en précisant quel problème concerne du contenu exempté ou dérogé (par exemple, en indiquant `[Exempté]` ou `[Dérogé]` en amont).
 - **Auditer les éléments transverses :** Nous utilisons l’onglet « P01 » pour auditer les éléments transverses au site (en-tête, pied de page, fil d’Ariane…). Les éléments concernés doivent être listés dans la colonne « Commentaire » de l’onglet « Échantillon ». Cela nous permet d’éviter d’auditer plusieurs fois les mêmes éléments.
 
-    Il y a ensuite deux possibilités dans la méthode de travail : soit les statuts des critères sont ensuite propagés manuellement aux autres pages avant de les auditer (en indiquant « Voir transverse » dans la colonne listant les problèmes relevés), soit **on ne propage pas ces statuts transverses et cela signifie que le taux moyen ne peut être calculé puisque le score par page sera faussé**. Pour des raisons de facilité et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait le deuxième choix et avons décidé de retirer de la grille la formule de calcul du taux moyen.
+    Il y a ensuite plusieurs possibilités dans la méthode de travail : soit les statuts des critères sont ensuite propagés manuellement aux autres pages avant de les auditer (en indiquant « Voir transverse » dans la colonne listant les problèmes relevés), soit **on ne propage pas ces statuts transverses et cela signifie que le taux moyen ne peut être calculé puisque le score par page sera faussé**.
+    Pour des raisons de facilité, de cohérence et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait un choix mix : nous propageons manuellement dans les autres onglets le statut des critères NC uniquement (en indiquant « Voir transverses P01 ») et avons décidé de retirer de la grille la formule de calcul du taux moyen.
 - **Auditer plus de 20 pages : ajouter une page à auditer** requiert quelques manipulations :
 
     1. Pour **ajouter une 21e page**, cliquer droit sur l’onglet P20 et faire « Déplacer/copier la feuille ». Sélectionner l’action « Copier ». Dans la liste déroulante « Insérer avant », choisir « - placer en dernière position - » tout en bas de la liste. Choisir le nouveau nom « P21 ». Cliquer « OK ».

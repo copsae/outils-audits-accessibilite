@@ -2,6 +2,14 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.4 — 28 juillet 2022
+
+- Correction des formules en A2 pour les P10 à P20 qui ne référençaient pas la bonne ligne de l’échantillon ;
+- Correction de la formule en A3 pour la P09 qui n’était pas bonne ;
+- Dans l’onglet « Synthèse », utilisation de la formule `ARRONDI()` pour arrondir le taux de conformité à 2 chiffres après la virgule ;
+- Modification du mode d’emploi sur notre choix quant à la propagation du statut des éléments transverses ;
+- Critère 12.10 : ajout de précisions sur la façon de tester le critère.
+
 ## Version 1.3 — 30 juin 2022
 
 - Correction des formules de références à d’autres onglets dans les pages (corrige l’incrémentation des références d’onglets lors de la duplication d’une page) ;
