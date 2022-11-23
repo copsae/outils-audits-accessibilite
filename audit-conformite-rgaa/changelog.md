@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.5 — 23 novembre 2022
+
+Correction de la formule de calcul du taux de conformité qui faisait référence à une mauvaise colonne de l’onglet BaseDeCalcul
+
 ## Version 1.4 — 28 juillet 2022
 
 - Correction des formules en A2 pour les P10 à P20 qui ne référençaient pas la bonne ligne de l’échantillon ;
