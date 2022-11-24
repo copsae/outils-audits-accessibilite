@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.6 — 24 novembre 2022
+
+Dans l’onglet « Échantillon », dans l’en-tête explicitant les conditions de l’audit, ajout de la ligne « Couples lecteur d’écran + navigateur utilisés : ».
+
 ## Version 1.5 — 23 novembre 2022
 
 Correction de la formule de calcul du taux de conformité qui faisait référence à une mauvaise colonne de l’onglet BaseDeCalcul
