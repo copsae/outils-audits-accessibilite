@@ -45,7 +45,11 @@ Zoom navigateur | Outil navigateur natif | <kbd>CTRL</kbd> + <kbd>+</kbd> (6 foi
 
 ## Fournir un document de préconisations, en plus de la grille d’audit
 
-Nous déconseillons de mettre les préconisations de correction pour les anomalies d’accessibilité dans la grille d’audit (quelque soit l’audit). En effet, la nature et la longueur des textes rédigés ne sont pas appropriées pour des cases de tableur : ce ne sera pas lisible, la mise en forme est difficilement possible, etc.
+⚠️ **Point d’attention :** Nous nous sommes rendues compte que les informations ci-dessous ne sont pas une idée assez recherchée et opérationnelle pour le moment pour les audits de conformité au RGAA (cela demande, notamment, trop de temps). Nous laissons donc ces recommandations à disposition car elles peuvent être utiles pour d’autres formats d’audit.
+
+---
+
+Nous déconseillons, si possible, de mettre les préconisations de correction pour les anomalies d’accessibilité dans la grille d’audit (quelque soit l’audit). En effet, la nature et la longueur des textes rédigés ne sont pas appropriées pour des cases de tableur : ce ne sera pas lisible, la mise en forme est difficilement possible, etc.
 
 Nous conseillons donc de **mettre les préconisations dans un (ou plusieurs) document séparé** (ou bien dans l’outil de gestion des tickets du projet).
 
@@ -66,7 +70,7 @@ Voici quelques points qui nous semblent importants :
     - Exemple 2 : un bouton qui n’a pas la bonne sémantique (développement) + un défaut de nom (développement) = un seul ticket
 - **Éviter les trop gros tickets** : voir si ça ne peut pas être découpé en plusieurs plus petits. Un ticket trop gros sera généralement partiellement corrigé car il sera difficile à suivre.
 
-Dans le cadre d’un audit de conformité, la DINUM propose un [modèle de rapport d’audit](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/kit/) qui peut servir comme structure de base du document. Libre à nous, ensuite, de rédiger les préconisations de la façon qui nous semble la plus appropriée.
+Dans le cadre d’un audit de conformité, la DINUM propose un [modèle de rapport d’audit](https://accessibilite.numerique.gouv.fr/ressources/kit-audit/) qui peut servir comme structure de base du document. Libre à nous, ensuite, de rédiger les préconisations de la façon qui nous semble la plus appropriée.
 
 <a id="impact"></a>
 
@@ -76,6 +80,6 @@ Estimer l’impact d’une anomalie d’accessibilité pour les utilisateurs et 
 
 - **Bloquant** = impact bloquant : le problème empêche l’accès à une information ou un service pour au moins un « type de handicap » (exemple : un bouton n’est pas utilisable au clavier et il n’y a aucun moyen alternatif pour obtenir l’information cachée derrière ce bouton) ;
 - **Majeur** = impact fort : le problème est gênant pour accéder à une information ou un service pour au moins un « type de handicap » (exemple : visuellement, le contenu est hiérarchisé avec des titres mais ce sont tous des paragraphes dans le code) ;
-- **Mineur** = impact faible : le problème ne gêne pas l’accès à l’information (exemple : l’élement `<title>` ne contient pas le nom du site mais le nom du site est bien présent dans l’en-tête de celui-ci) ou le problème a un impact inexistant tant que le code reste en l’état mais présente un risque (exemple : un identifiant dupliqué lorsque cet identifiant n’est associé à aucun autre élément techniquement (champs de formulaire, ancre, `aria-labelledby`, `aria-describedby`…)).
+- **Mineur** = impact faible : le problème ne gêne pas l’accès à l’information (exemple : l’élément `<title>` ne contient pas le nom du site mais le nom du site est bien présent dans l’en-tête de celui-ci) ou le problème a un impact inexistant tant que le code reste en l’état mais présente un risque (exemple : un identifiant dupliqué lorsque cet identifiant n’est associé à aucun autre élément techniquement (champs de formulaire, ancre, `aria-labelledby`, `aria-describedby`…)).
 
 Ces définitions peuvent être amenées à changer avec le temps (selon leur pertinence évaluée à l’usage, selon des discussions avec d’autres personnes expertes, etc.). Ainsi, elles sont précisées dans le mode d’emploi de chaque grille d’audit pour ne pas fausser la lecture d’un audit réalisé avec une éventuelle version antérieure de ces règles.

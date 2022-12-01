@@ -1,6 +1,6 @@
 # Grille d’audit de conformité au RGAA
 
-La grille d’audit est basée sur [la grille officielle de la DINUM disponible sur le site officiel du RGAA](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/kit/), document « placé sous [licence ouverte 2.0 ou ultérieure](https://www.etalab.gouv.fr/licence-ouverte-open-licence) » (voir les détails dans la grille).
+La grille d’audit est basée sur [la grille officielle de la DINUM disponible sur le site officiel du RGAA](https://accessibilite.numerique.gouv.fr/ressources/kit-audit/), document « placé sous [licence ouverte 2.0 ou ultérieure](https://www.etalab.gouv.fr/licence-ouverte-open-licence) » (voir les détails dans la grille).
 
 ## Points modifiés
 
@@ -11,11 +11,13 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
     - Ajout d’une colonne « Tests » (affichage de l’ensemble des tests RGAA pour chaque critère) ;
     - Ajout d’une colonne « Niveau » (A ou AA) ;
     - Ajout d’une colonne « Comment tester (outils) » ;
-    - Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés (préconisations de correction dans un fichier séparé) » ;
+    - Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés et recommandation » ;
     - Ajout des filtres de colonnes ;
     - En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
     - Correction des formules en A2 pour les P10 à P20 qui ne référençaient pas la bonne ligne de l’échantillon.
-- Onglet « Échantillon » : ajout d’une colonne « Commentaire » ;
+- Dans l’onglet « Échantillon » :
+    - Ajout d’une colonne « Commentaire » ;
+    - Dans l’en-tête explicitant les conditions de l’audit, ajout de la ligne « Couples lecteur d’écran + navigateur utilisés : ».
 - Renommage de l’onglet « Critères » en « Critères (modèle) » ;
 - Passage de tous les textes en police Liberation Sans et en taille 10pt minimum au lieu de 8pt ;
 - Rétablissement des bordures de cellules (qui avaient disparues par endroit) ;
@@ -27,24 +29,32 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
 - Corrections pour l’ajout d’onglets (pages à auditer) :
     - Correction des formules : ajout du signe `$` devant les noms d’onglets dans les formules afin qu’une duplication d’onglet n’entraîne pas une incrémentation dans les formules ;
     - Ajout de la documentation dans l’onglet « Mode d’emploi » pour savoir exactement comment ajouter une page.
-- Dans l’onglet « Synthèse », utilisation de la formule `ARRONDI()` pour arrondir le taux de conformité à 2 chiffres après la virgule.
+- Dans l’onglet « Synthèse » :
+    - Utilisation de la formule `ARRONDI()` pour arrondir le taux de conformité à 2 chiffres après la virgule ;
+    - Ajout d’une section « Synthèse finale à l’échelle de l’échantillon » mettant en valeur le taux de conformité au RGAA final et ajoutant un tableau récapitulatif du nombre de critères conformes, non conformes, non applicables à l’échelle de l’échantillon ;
+- Dans l’onglet « BaseDeCalcul » :
+    - Ajout d’un intitulé à la colonne AB « Statut à l’échelle de l’échantillon » ;
+    - Ajout d’un filtre pour cette colonne pour voir rapidement et lister les critères NC à l’échelle de l’échantillon (pour rédiger le rapport d’audit et pour les personnes qui vont corriger) ;
+    - Ajout du formatage conditionnel pour les statuts de critères.
 
 ## Points restants à modifier
 
 Certains points restent à modifier :
 
-- Ajout d’un moyen de signalement des [exemptions](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenus-exempt%C3%A9s) (différentes des [dérogations](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#d%C3%A9rogation-pour-charge-disproportionn%C3%A9e)). Idée : ajouter une colonne « Exemption » et une autre « Commentaire exemption » car on déroge ou exempte un contenu donc il faut pouvoir avoir les 2 à la fois (on peut avoir un contenu exempté, un contenu dérogé, un contenu ni exempté ni dérogé pour un même critère)
+- Ajout d’un moyen de signalement des [exemptions](https://accessibilite.numerique.gouv.fr/obligations/champ-application/#contenus-exemptes) (différentes des [dérogations](https://accessibilite.numerique.gouv.fr/obligations/champ-application/#derogation-pour-charge-disproportionnee)). Idée : ajouter une colonne « Exemption » et une autre « Commentaire exemption » car on déroge ou exempte un contenu donc il faut pouvoir avoir les 2 à la fois (on peut avoir un contenu exempté, un contenu dérogé, un contenu ni exempté ni dérogé pour un même critère)
 
 ## Ajouts au mode d’emploi
 
 - **Liste des problèmes relevés :** Pour chaque page et pour chaque règle, il faut indiquer, s’il y en a, la liste des problèmes relevés.
-    - Chaque problème peut avoir un impact différent sur les utilisateurs et utilisatrices. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)).
-    - Indiquer ensuite le problème relevé mais sans faire la préconisation de correction. Un tableur n’est pas approprié pour y faire figurer autant d’informations. Il vaut mieux mettre les préconisations dans un document texte séparé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#doc-preco)).
+    - Chaque problème peut avoir un impact différent pour les personnes handicapées. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)).
+    - Indiquer ensuite le problème relevé en faisant une préconisation de correction technique sommaire. Un tableur n’étant pas approprié pour y faire figurer des préconisations longues, pour certaines non-conformités complexes, il peut ne pas être possible de mettre la préconisation détaillée précisément dans la grille. Cela pourra figurer dans le rapport d’audit ou bien nécessiter un accompagnement dédié : le préciser dans la grille quand c’est le cas.
+
+        Si on le peut, mais cela demande plus de temps, il peut être mieux mettre les préconisations dans un document texte séparé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#doc-preco)).
 - **Si la règle est non applicable pour raison d’exemption ou dérogation**, il est préférable d’indiquer les problèmes concernés dans la colonne listant les problèmes relevés en précisant quel problème concerne du contenu exempté ou dérogé (par exemple, en indiquant `[Exempté]` ou `[Dérogé]` en amont).
 - **Auditer les éléments transverses :** Nous utilisons l’onglet « P01 » pour auditer les éléments transverses au site (en-tête, pied de page, fil d’Ariane…). Les éléments concernés doivent être listés dans la colonne « Commentaire » de l’onglet « Échantillon ». Cela nous permet d’éviter d’auditer plusieurs fois les mêmes éléments.
 
-    Il y a ensuite plusieurs possibilités dans la méthode de travail : soit les statuts des critères sont ensuite propagés manuellement aux autres pages avant de les auditer (en indiquant « Voir transverse » dans la colonne listant les problèmes relevés), soit **on ne propage pas ces statuts transverses et cela signifie que le taux moyen ne peut être calculé puisque le score par page sera faussé**.
-    Pour des raisons de facilité, de cohérence et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait un choix mix : nous propageons manuellement dans les autres onglets le statut des critères NC uniquement (en indiquant « Voir transverses P01 ») et avons décidé de retirer de la grille la formule de calcul du taux moyen.
+    Il y a ensuite plusieurs possibilités dans la méthode de travail : soit les statuts des critères sont ensuite propagés manuellement aux autres pages avant de les auditer (en indiquant « Voir transverses P01 » dans la colonne listant les problèmes relevés), soit **on ne propage pas ces statuts transverses et cela signifie que le taux moyen ne peut être calculé puisque le score par page sera faussé**.
+    Pour des raisons de facilité, de temps et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait le choix de ne pas propager les statuts des éléments transverses aux autres pages et avons décidé de retirer de la grille la formule de calcul du taux moyen (qui serait alors encore plus biaisée).
 - **Auditer plus de 20 pages : ajouter une page à auditer** requiert quelques manipulations :
 
     1. Pour **ajouter une 21e page**, cliquer droit sur l’onglet P20 et faire « Déplacer/copier la feuille ». Sélectionner l’action « Copier ». Dans la liste déroulante « Insérer avant », choisir « - placer en dernière position - » tout en bas de la liste. Choisir le nouveau nom « P21 ». Cliquer « OK ».

@@ -2,13 +2,28 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.7 — 1er décembre 2022
+
+- Onglet « BaseDeCalcul » :
+    - Ajout d’un intitulé à la colonne AB « Statut à l’échelle de l’échantillon » ;
+    - Ajout d’un filtre pour cette colonne pour voir rapidement et lister les critères NC à l’échelle de l’échantillon ;
+    - Ajout du formatage conditionnel pour les statuts de critères.
+- Onglet « Synthèse » : ajout d’une section « Synthèse finale à l’échelle de l’échantillon » mettant en valeur le taux de conformité au RGAA final et ajoutant un tableau récapitulatif du nombre de critères conformes, non conformes, non applicables à l’échelle de l’échantillon ;
+- Retours arrière sur nos idées :
+    - Onglet « Critères (modèle) », la colonne listant les non-conformités est renommée « [Impact] Problèmes relevés et recommandation » car la rédaction d’un document de préconisation à côté n’est pas une idée assez recherchée et opérationnelle pour le moment ;
+    - Propagation des éléments transverses : modification de la documentation (onglet « Mode d’emploi » et le [readme.md](README.md)). Finalement, on refait le choix de ne plus propager les transverses car :
+        - Ça demande du temps de le faire à la main ;
+        - Ne propager que les statuts NC n’avait pas beaucoup plus de sens que de ne pas le faire ;
+        - On souhaite utiliser l’onglet « BaseDeCalcul » comme aide pour voir où sont les critères NC (pour rédiger le rapport d’audit et pour les personnes qui vont corriger). Avoir les statuts des éléments transverses propagés rend un critère NC sur la totalité de l’échantillon et brouille donc la lisibilité et la praticité.
+- Modification de liens pointant vers l’ancien site du RGAA.
+
 ## Version 1.6 — 24 novembre 2022
 
 Dans l’onglet « Échantillon », dans l’en-tête explicitant les conditions de l’audit, ajout de la ligne « Couples lecteur d’écran + navigateur utilisés : ».
 
 ## Version 1.5 — 23 novembre 2022
 
-Correction de la formule de calcul du taux de conformité qui faisait référence à une mauvaise colonne de l’onglet BaseDeCalcul
+Correction de la formule de calcul du taux de conformité qui faisait référence à une mauvaise colonne de l’onglet BaseDeCalcul.
 
 ## Version 1.4 — 28 juillet 2022
 
