@@ -2,7 +2,7 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
-## Version 1.7 — 1er décembre 2022
+## Version 1.7 — 5 décembre 2022
 
 - Onglet « BaseDeCalcul » :
     - Ajout d’un intitulé à la colonne AB « Statut à l’échelle de l’échantillon » ;
