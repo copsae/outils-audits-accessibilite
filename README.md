@@ -4,6 +4,8 @@ Ce dépôt contient les outils que nous utilisons chez Copsaé et que nous avons
 
 Vous pouvez vous les approprier à votre tour selon [la licence établie](LICENSE.txt).
 
+**⚠️ Toutefois, attention : ces outils sont destinés à des spécialistes de l’accessibilité web qui réalisent des audits. Ils ne sont en aucun cas des outils destinés à des équipes projets. Ce ne sont pas des *checklists*.**
+
 Vous trouverez plus de détails dans le « README.md » de chaque dossier :
 
 * [Grille d’audit de conformité au RGAA](/audit-conformite-rgaa/) ;
