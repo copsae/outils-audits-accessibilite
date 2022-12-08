@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.8 — 8 décembre 2022
+
+Onglet « P02 » : suppression d’un texte blanc dans la case de relevé des problèmes.
+
 ## Version 1.7 — 5 décembre 2022
 
 - Onglet « BaseDeCalcul » :
