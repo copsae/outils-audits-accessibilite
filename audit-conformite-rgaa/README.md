@@ -35,7 +35,8 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
 - Dans l’onglet « BaseDeCalcul » :
     - Ajout d’un intitulé à la colonne AB « Statut à l’échelle de l’échantillon » ;
     - Ajout d’un filtre pour cette colonne pour voir rapidement et lister les critères NC à l’échelle de l’échantillon (pour rédiger le rapport d’audit et pour les personnes qui vont corriger) ;
-    - Ajout du formatage conditionnel pour les statuts de critères.
+    - Ajout du formatage conditionnel pour les statuts de critères ;
+    - En cellule C125, renommage de l’intitulé « TAUX MOYEN » en « Taux par onglet du tableur » (car il ne s’agit pas d’un taux moyen ni d’un taux par page, les éléments transverses n’étant pas propagés).
 
 ## Points restants à modifier
 

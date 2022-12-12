@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.9 — 12 décembre 2022
+
+Onglet « BaseDeCalcul » : en cellule C125, renommage de l’intitulé « TAUX PAR PAGE » en « Taux par onglet du tableur » (car il ne s’agit pas non plus d’un taux par page, les éléments transverses n’étant pas propagés).
+
 ## Version 1.8 — 8 décembre 2022
 
 Onglet « P02 » : suppression d’un texte blanc dans la case de relevé des problèmes.
@@ -11,7 +15,8 @@ Onglet « P02 » : suppression d’un texte blanc dans la case de relevé des
 - Onglet « BaseDeCalcul » :
     - Ajout d’un intitulé à la colonne AB « Statut à l’échelle de l’échantillon » ;
     - Ajout d’un filtre pour cette colonne pour voir rapidement et lister les critères NC à l’échelle de l’échantillon ;
-    - Ajout du formatage conditionnel pour les statuts de critères.
+    - Ajout du formatage conditionnel pour les statuts de critères ;
+    - En cellule C125, renommage de l’intitulé « TAUX MOYEN » en « TAUX PAR PAGE » (car il ne s’agit pas d’un taux moyen).
 - Onglet « Synthèse » : ajout d’une section « Synthèse finale à l’échelle de l’échantillon » mettant en valeur le taux de conformité au RGAA final et ajoutant un tableau récapitulatif du nombre de critères conformes, non conformes, non applicables à l’échelle de l’échantillon ;
 - Retours arrière sur nos idées :
     - Onglet « Critères (modèle) », la colonne listant les non-conformités est renommée « [Impact] Problèmes relevés et recommandation » car la rédaction d’un document de préconisation à côté n’est pas une idée assez recherchée et opérationnelle pour le moment ;
