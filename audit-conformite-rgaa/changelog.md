@@ -2,6 +2,12 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.10 — 2 février 2023
+
+- Pour chaque onglet d’audit (Pxx), ajout d’une colonne « Commentaire de l’audit de contrôle » ;
+- Ajout de 10 onglets d’audit supplémentaires ;
+- Modification du mode d’emploi en conséquence.
+
 ## Version 1.9 — 12 décembre 2022
 
 Onglet « BaseDeCalcul » : en cellule C125, renommage de l’intitulé « TAUX PAR PAGE » en « Taux par onglet du tableur » (car il ne s’agit pas non plus d’un taux par page, les éléments transverses n’étant pas propagés).

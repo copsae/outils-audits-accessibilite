@@ -6,15 +6,19 @@ La grille d’audit est basée sur [la grille officielle de la DINUM disponible 
 
 Afin de faciliter notre travail d'audit, nous avons modifié les points suivants :
 
-- Ajout d’une partie « Notes complémentaires ajoutées par Copsaé » dans l’onglet « Mode_d'emploi » ;
+- Dans l’onglet « Mode d’emploi » :
+    - Ajout d’une partie « Notes complémentaires ajoutées par Copsaé » ;
+    - Modification du nombre de pages par défaut (de 20 à 30).
 - Pour les onglets d’audit :
     - Ajout d’une colonne « Tests » (affichage de l’ensemble des tests RGAA pour chaque critère) ;
     - Ajout d’une colonne « Niveau » (A ou AA) ;
     - Ajout d’une colonne « Comment tester (outils) » ;
+    - Ajout d’une colonne « Commentaire de l’audit de contrôle » afin de faciliter le suivi ;
     - Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés et recommandation » ;
     - Ajout des filtres de colonnes ;
     - En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
     - Correction des formules en A2 pour les P10 à P20 qui ne référençaient pas la bonne ligne de l’échantillon.
+- Ajout de 10 onglets d’audit supplémentaires par défaut ;
 - Dans l’onglet « Échantillon » :
     - Ajout d’une colonne « Commentaire » ;
     - Dans l’en-tête explicitant les conditions de l’audit, ajout de la ligne « Couples lecteur d’écran + navigateur utilisés : ».
@@ -56,13 +60,16 @@ Certains points restent à modifier :
 
     Il y a ensuite plusieurs possibilités dans la méthode de travail : soit les statuts des critères sont ensuite propagés manuellement aux autres pages avant de les auditer (en indiquant « Voir transverses P01 » dans la colonne listant les problèmes relevés), soit **on ne propage pas ces statuts transverses et cela signifie que le taux moyen ne peut être calculé puisque le score par page sera faussé**.
     Pour des raisons de facilité, de temps et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait le choix de ne pas propager les statuts des éléments transverses aux autres pages et avons décidé de retirer de la grille la formule de calcul du taux moyen (qui serait alors encore plus biaisée).
-- **Auditer plus de 20 pages : ajouter une page à auditer** requiert quelques manipulations :
+- **Auditer plus de 30 pages : ajouter une page à auditer** requiert quelques manipulations :
 
-    1. Pour **ajouter une 21e page**, cliquer droit sur l’onglet P20 et faire « Déplacer/copier la feuille ». Sélectionner l’action « Copier ». Dans la liste déroulante « Insérer avant », choisir « - placer en dernière position - » tout en bas de la liste. Choisir le nouveau nom « P21 ». Cliquer « OK ».
-    2. Se rendre sur **l’onglet « Échantillon »**. Dupliquer la dernière ligne du tableau pour faire figurer la page 21 avec son titre et son URL.
-    3. Se rendre sur **l’onglet « P21 »** nouvellement créé. Modifier la formule de la cellule A2 pour incrémenter les valeurs B28 et C28 qui deviendront B29 et C29.
-    4. Se rendre dans **l’onglet « BaseDeCalcul »**. Il y a 2 tableaux de calculs dans lesquels nous allons devoir ajouter la page 21.
-    5. **Premier tableau, pour ajouter P21 :** se rendre à la colonne de la page P20 (normalement, colonne W) et ajouter une colonne après pour mettre la P21. Ensuite, sélectionner les cellules 1 à 125 de la colonne W. Appuyer sur la touche MAJ du clavier et tirer les cellules sélectionnées vers la colonne X avec la souris (via le petit carré en bas de la dernière cellule sélectionnée). Sélectionner maintenant les cellules 3 à 125 de la colonne X et faire CTRL + H (Rechercher/Remplacer). Rechercher « P20 » et remplacer par « P21 » en veillant ce que la case « Sélection active seulement » soit cochée.
-    6. **Premier tableau, pour corriger les calculs :** dans les colonnes de calculs des statuts (normalement Y, Z, AA, AB), il faut maintenant ajouter la prise en compte de la page 21. Sélectionner les cellules de Y3 à AB120. Et rechercher « W » (la colonne de la P20) pour le remplacer par « X » (la colonne de la P21) dans la sélection active.
-    7. **Deuxième tableau :** faire de même que pour le premier tableau pour l’ajout de la colonne « P21 » et la modification du calcul du compte des dérogations (colonne « Total D »), en adaptant bien sûr les numéros de colonnes.
-    8. Vérifier en modifiant les statuts de certains critères dans l’onglet « P21 » qu’ils sont bien pris en compte dans l’onglet « Synthèse » qui récupère automatiquement les résultats de la base de calcul.
+    1. Pour **ajouter une 231e page**, cliquer droit sur l’onglet P30 et faire « Déplacer/copier la feuille ». Sélectionner l’action « Copier ». Dans la liste déroulante « Insérer avant », choisir « - placer en dernière position - » tout en bas de la liste. Choisir le nouveau nom « P31 ». Cliquer « OK ».
+    2. Se rendre sur **l’onglet « Échantillon »**. Dupliquer la dernière ligne du tableau pour faire figurer la page 31 avec son titre et son URL.
+    3. Se rendre sur **l’onglet « P31 »** nouvellement créé. Modifier la formule de la cellule A2 pour incrémenter les valeurs B39 et C39 qui deviendront B40 et C40.
+    4. Se rendre dans **l’onglet « BaseDeCalcul »**. Il y a 2 tableaux de calculs dans lesquels nous allons devoir ajouter la page 31.
+    5. **Premier tableau, pour ajouter P31 :** se rendre à la colonne de la page P30 (normalement, colonne AG) et ajouter une colonne après pour mettre la P31. Ensuite, sélectionner les cellules 1 à 125 de la colonne AG. Appuyer sur la touche MAJ du clavier et tirer les cellules sélectionnées vers la colonne X avec la souris (via le petit carré en bas de la dernière cellule sélectionnée). Sélectionner maintenant les cellules 3 à 125 de la colonne AH et faire CTRL + H (Rechercher/Remplacer). Rechercher « P30 » et remplacer par « P31 » en veillant ce que la case « Sélection active seulement » soit cochée.
+    6. **Premier tableau, pour corriger les calculs :** dans les colonnes de calculs des statuts (normalement devenues AI, AJ, AK, AL), il faut maintenant ajouter la prise en compte de la page 31. Sélectionner les cellules de AI3 à AL120. Et rechercher « AG » (la colonne de la P30) pour le remplacer par « AH » (la colonne de la P31) dans la sélection active.
+    7. **Deuxième tableau :** faire de même que pour le premier tableau pour l’ajout de la colonne « P31 » et la modification du calcul du compte des dérogations (colonne « Total D »), en adaptant bien sûr les numéros de colonnes.
+    8. Vérifier en modifiant les statuts de certains critères dans l’onglet « P31 » qu’ils sont bien pris en compte dans l’onglet « Synthèse » qui récupère automatiquement les résultats de la base de calcul.
+- **Audit de contrôle** : un audit de contrôle permet de vérifier la bonne implémentation des corrections demandées lors de l’audit initial. On ne refait pas un audit complet.
+    - Si une anomalie est corrigée, on la supprime de la grille. Si le critère ne contient pas d’autre anomalie, on change le statut du critère qui devient conforme ou non applicable (selon les cas). Dans tous les cas, on ajoute la mention de la suppression d'une anomalie (exemple : « 2 février 2023 : 1 anomalie corrigée et retirée ») dans la colonne « Commentaire de l’audit de contrôle » afin de faire le suivi et de pouvoir filtrer les retours.
+    - Si une anomalie est partiellement corrigée ou pas corrigée, il est possible que de nouveaux problèmes aient été créés. Dans ce cas, modifier les critères correspondants à ces nouveaux problèmes. Devant l’explication de la nouvelle anomalie, indiquer « [Nouveau] ». Dans la colonne « Commentaire de l’audit de contrôle », ajouter l’information « 2 février 2023 : 1 anomalie ajoutée ».
