@@ -62,7 +62,7 @@ Certains points restent à modifier :
     Pour des raisons de facilité, de temps et parce que le taux moyen nous semble être un score beaucoup trop biaisé (voir cet article à ce sujet : [RGAA : quelle différence entre taux de conformité global sur l’échantillon et taux moyen ?](https://access42.net/rgaa-taux-conformite-global-moyen-echantillon)), nous avons fait le choix de ne pas propager les statuts des éléments transverses aux autres pages et avons décidé de retirer de la grille la formule de calcul du taux moyen (qui serait alors encore plus biaisée).
 - **Auditer plus de 30 pages : ajouter une page à auditer** requiert quelques manipulations :
 
-    1. Pour **ajouter une 231e page**, cliquer droit sur l’onglet P30 et faire « Déplacer/copier la feuille ». Sélectionner l’action « Copier ». Dans la liste déroulante « Insérer avant », choisir « - placer en dernière position - » tout en bas de la liste. Choisir le nouveau nom « P31 ». Cliquer « OK ».
+    1. Pour **ajouter une 31e page**, cliquer droit sur l’onglet P30 et faire « Déplacer/copier la feuille ». Sélectionner l’action « Copier ». Dans la liste déroulante « Insérer avant », choisir « - placer en dernière position - » tout en bas de la liste. Choisir le nouveau nom « P31 ». Cliquer « OK ».
     2. Se rendre sur **l’onglet « Échantillon »**. Dupliquer la dernière ligne du tableau pour faire figurer la page 31 avec son titre et son URL.
     3. Se rendre sur **l’onglet « P31 »** nouvellement créé. Modifier la formule de la cellule A2 pour incrémenter les valeurs B39 et C39 qui deviendront B40 et C40.
     4. Se rendre dans **l’onglet « BaseDeCalcul »**. Il y a 2 tableaux de calculs dans lesquels nous allons devoir ajouter la page 31.
