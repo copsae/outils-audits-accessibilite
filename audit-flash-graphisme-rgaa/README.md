@@ -6,7 +6,7 @@ Cette grille a été réalisée avec LibreOffice Calc. Nous ne garantissons pas 
 
 ## Qu’est-ce qu’un audit flash graphisme ?
 
-Un audit flash graphisme est un audit rapide des maquettes graphiques. Il s’appuie sur 52 critères du RGAA 4.1 (sur [106 en tout](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/)). Ces critères concernent, selon nous, directement ou indirectement les maquettes graphiques.
+Un audit flash graphisme est un audit rapide des maquettes graphiques. Il s’appuie sur 52 critères du RGAA 4.1 (sur [106 en tout](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)). Ces critères concernent, selon nous, directement ou indirectement les maquettes graphiques.
 
 Les critères ont été nécessairement reformulés en des règles qui concernent le graphisme.
 
@@ -34,7 +34,7 @@ Ensuite, nous avons réécrit les règles de façon à ce qu’elles soient spé
 - **Le statut pour chaque règle :** S’agissant d’une grille d’audit simplifié, il ne faut pas donner un statut identique au RGAA « Conforme »/« Non conforme ». Nous avons donc choisi les statuts « Validé » ou « Invalidé ». Les valeurs possibles sont donc :
     - « **Invalidé** » : Au moins un problème est relevé dans la page pour la règle en question ;
     - « **Validé** » : Aucun problème n’a été détecté dans la page pour la règle en question (ce qui n’est pas un engagement ferme dans la mesure où cela dépendra des développements futurs) ;
-    - « **NA** » (« Non applicable ») : Soit aucun élément dans la page ne concerne la règle, soit le seul contenu qui concerne la règle est exempté ([cf. RGAA sur les contenus exemptés pour les sites dans le périmètre de la loi](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenus-exempt%C3%A9s)), soit le seul contenu qui concerne la règle est soumis à dérogation et il propose une alternative numérique accessible ([cf. RGAA sur la dérogation pour charge disproportionnée pour les sites dans le périmètre de la loi](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#d%C3%A9rogation-pour-charge-disproportionn%C3%A9e)).
+    - « **NA** » (« Non applicable ») : Soit aucun élément dans la page ne concerne la règle, soit le seul contenu qui concerne la règle est exempté ([cf. RGAA sur les contenus exemptés pour les sites dans le périmètre de la loi](https://accessibilite.numerique.gouv.fr/obligations/champ-application/#contenus-exemptes)), soit le seul contenu qui concerne la règle est soumis à dérogation et il propose une alternative numérique accessible ([cf. RGAA sur la dérogation pour charge disproportionnée pour les sites dans le périmètre de la loi](https://accessibilite.numerique.gouv.fr/obligations/champ-application/#derogation-pour-charge-disproportionnee)).
     - « **NT** » (« Non testé ») : La règle n’a pas encore été testée. Cela sert uniquement à mesurer la progression de l’audit.
 - **Liste des problèmes relevés :** Pour chaque page et pour chaque règle, il faut indiquer, s’il y en a, la liste des problèmes relevés.
     - Chaque problème peut avoir un impact différent sur les utilisateurs et utilisatrices. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)).

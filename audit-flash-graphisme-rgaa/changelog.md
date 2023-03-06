@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 1.4 — 6 mars 2023
+
+Modification des liens vers le nouveau site du RGAA
+
 ## Version 1.3 — 23 juin 2022
 
 Correction des statuts pour les critères complémentaires (restés sur l’ancien modèle…)
