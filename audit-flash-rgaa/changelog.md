@@ -2,6 +2,14 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 2.0 — 11 avril 2023
+
+Passage au RGAA 4.1.1 ([voir la note de révision officielle](https://accessibilite.numerique.gouv.fr/ressources/notes-de-revision-4-1-1/)). Modification effectuée dans la grille :
+
+- Règle F09 : ajout de « non incrustés » pour les sous-titres.
+
+Note : concernant le critère 10.11 du RGAA, la règle F24 précisait déjà qu’il ne devait pas y avoir de perte d’information.
+
 ## Version 1.8 — 6 mars 2023
 
 Modification des liens vers le nouveau site du RGAA (merci [@mloyat](https://github.com/mloyat)).
