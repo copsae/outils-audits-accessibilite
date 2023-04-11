@@ -2,6 +2,13 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 2.0 — 11 avril 2023
+
+Passage au RGAA 4.1.1 ([voir la note de révision officielle](https://accessibilite.numerique.gouv.fr/ressources/notes-de-revision-4-1-1/)). Modifications effectuées dans la grille :
+
+- Test 5.8.1 : suppression de `<colgroup>` ;
+- Critère 10.11 : reformulation du critère.
+
 ## Version 1.10 — 2 février 2023
 
 - Pour chaque onglet d’audit (Pxx), ajout d’une colonne « Commentaire de l’audit de contrôle » ;
