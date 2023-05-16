@@ -1,0 +1,23 @@
+form{
+  margin:2em 0;
+}
+
+.error{
+  border:3px solid #DD6666;
+  background-color: #DD666666;
+  padding:2em;
+}
+
+form .field{
+  display: block;
+  margin-bottom:1.5em;
+}
+
+label{
+  display: block;
+}
+
+label .title{
+  display: block;
+  font-weight: bold;
+}
