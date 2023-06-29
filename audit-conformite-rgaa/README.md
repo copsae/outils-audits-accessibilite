@@ -2,13 +2,18 @@
 
 La grille d’audit est basée sur [la grille officielle de la DINUM disponible sur le site officiel du RGAA](https://accessibilite.numerique.gouv.fr/ressources/kit-audit/), document « placé sous [licence ouverte 2.0 ou ultérieure](https://www.etalab.gouv.fr/licence-ouverte-open-licence) » (voir les détails dans la grille).
 
+La grille, au départ au format ODS, a été passée au format XLSX afin de la rendre compatible pour un traitement en PHP afin d’extraire la liste des anomalies dans un onglet dédié, grâce à [la Moulinette](/moulinette/).
+
+Ainsi, elle devrait être compatible avec LibreOffice Calc comme au départ, mais également, désormais, avec Excel.
+
 ## Points modifiés
 
 Afin de faciliter notre travail d'audit, nous avons modifié les points suivants :
 
 - Dans l’onglet « Mode d’emploi » :
     - Ajout d’une partie « Notes complémentaires ajoutées par Copsaé » ;
-    - Modification du nombre de pages par défaut (de 20 à 30).
+    - Modification du nombre de pages par défaut (de 20 à 30) ;
+    - Ajout de l’étape 3.
 - Pour les onglets d’audit :
     - Ajout d’une colonne « Tests » (affichage de l’ensemble des tests RGAA pour chaque critère) ;
     - Ajout d’une colonne « Niveau » (A ou AA) ;
@@ -41,6 +46,7 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
     - Ajout d’un filtre pour cette colonne pour voir rapidement et lister les critères NC à l’échelle de l’échantillon (pour rédiger le rapport d’audit et pour les personnes qui vont corriger) ;
     - Ajout du formatage conditionnel pour les statuts de critères ;
     - En cellule C125, renommage de l’intitulé « TAUX MOYEN » en « Taux par onglet du tableur » (car il ne s’agit pas d’un taux moyen ni d’un taux par page, les éléments transverses n’étant pas propagés).
+- Ajout de l’onglet « Liste anomalies » pour [la Moulinette](/moulinette/).
 
 ## Points restants à modifier
 
@@ -49,6 +55,8 @@ Certains points restent à modifier :
 - Ajout d’un moyen de signalement des [exemptions](https://accessibilite.numerique.gouv.fr/obligations/champ-application/#contenus-exemptes) (différentes des [dérogations](https://accessibilite.numerique.gouv.fr/obligations/champ-application/#derogation-pour-charge-disproportionnee)). Idée : ajouter une colonne « Exemption » et une autre « Commentaire exemption » car on déroge ou exempte un contenu donc il faut pouvoir avoir les 2 à la fois (on peut avoir un contenu exempté, un contenu dérogé, un contenu ni exempté ni dérogé pour un même critère)
 
 ## Ajouts au mode d’emploi
+
+### Étape 2
 
 - **Liste des problèmes relevés :** Pour chaque page et pour chaque règle, il faut indiquer, s’il y en a, la liste des problèmes relevés.
     - Chaque problème peut avoir un impact différent pour les personnes handicapées. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)).
@@ -73,3 +81,7 @@ Certains points restent à modifier :
 - **Audit de contrôle** : un audit de contrôle permet de vérifier la bonne implémentation des corrections demandées lors de l’audit initial. On ne refait pas un audit complet.
     - **Si une anomalie est corrigée**, on la supprime de la grille. Si le critère ne contient pas d’autre anomalie, on change le statut du critère qui devient conforme ou non applicable (selon les cas). Dans tous les cas, on ajoute la mention de la suppression d'une anomalie (exemple : « 2 février 2023 : 1 anomalie corrigée et retirée ») dans la colonne « Commentaire de l’audit de contrôle » afin de faire le suivi et de pouvoir filtrer les retours.
     - **Si une anomalie est partiellement corrigée ou pas corrigée**, il est possible que de nouveaux problèmes aient été créés. Dans ce cas, modifier les critères correspondants à ces nouveaux problèmes. Devant l’explication de la nouvelle anomalie, indiquer « [Nouveau] ». Dans la colonne « Commentaire de l’audit de contrôle », ajouter l’information « 2 février 2023 : 1 anomalie ajoutée ».
+
+### Étape 3
+
+Une fois l’audit terminé, passer la grille à [la Moulinette](https://moulinette.copsae.fr/) pour obtenir la liste des anomalies.
