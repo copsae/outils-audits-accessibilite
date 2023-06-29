@@ -16,7 +16,7 @@ class AuditDataAnalyser {
 
   // Les messages d'erreur.
   const ERORR_NO_FILE_CODE = 10;
-  const ERORR_NO_FILE_MESSAGE = "Aucun fichier n'a été transmis. Vous devez envoyer un fichier au format ods pour qu'il puisse être analysé et traité.";
+  const ERORR_NO_FILE_MESSAGE = "Aucun fichier n'a été transmis. Vous devez envoyer un fichier au format XLSX pour qu'il puisse être analysé et traité.";
 
   const ERORR_UNKNOWN_SOURCE = 20;
   const ERORR_UNKNOWN_SOURCE_MESSAGE = "Le fichier transmis ne semble pas être une grille d'audit maintenue par Copsaé.";

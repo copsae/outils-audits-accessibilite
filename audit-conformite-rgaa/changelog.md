@@ -2,6 +2,14 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 4.0 — 29 juin 2023
+
+- Passage de la grille du format ODS vers XLSX afin de la rendre compatible pour un traitement en PHP afin d’extraire la liste des anomalies dans un onglet dédié ;
+- Dans la grille :
+    - Dans l’onglet « Mode d’emploi » : ajout de l’étape 3 ;
+    - Ajout de l’onglet « Liste anomalies » pour [la Moulinette](/moulinette/).
+- Ajout de [la Moulinette](/moulinette/), automatiseur de liste d’anomalies pour l’audit de conformité au RGAA.
+
 ## Version 3.0 — 19 avril 2023
 
 Passage au RGAA 4.1.2 ([voir la note de révision officielle (note de révision des versions 4.1.1 et 4.1.2 fusionnée)](https://accessibilite.numerique.gouv.fr/ressources/notes-de-revision-4-1-2/)).
