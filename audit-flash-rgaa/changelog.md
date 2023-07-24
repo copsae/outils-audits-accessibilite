@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 3.1 — 24 juillet 2023
+
+Ajout d’une précision dans le mode d’emploi sur l’usage de critères complémentaires.
+
 ## Version 3.0 — 19 avril 2023
 
 Passage au RGAA 4.1.2 ([voir la note de révision officielle (note de révision des versions 4.1.1 et 4.1.2 fusionnée)](https://accessibilite.numerique.gouv.fr/ressources/notes-de-revision-4-1-2/)). Modification effectuée dans la grille :
