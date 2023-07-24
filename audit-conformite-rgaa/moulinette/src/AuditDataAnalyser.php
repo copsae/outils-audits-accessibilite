@@ -115,8 +115,13 @@ class AuditDataAnalyser {
 
     // Style par défaut pour les commentaires.
     // On s'assure que les commentaires ne seront pas en bold par défaut.
-    $style_array = $p01->getStyle('I4')->exportArray();
-    $style_array['font']['bold'] = FALSE;
+    // Pour les recommandations
+    $style_array_reco = $p01->getStyle('I4')->exportArray();
+    $style_array_reco['font']['bold'] = FALSE;
+
+    // Pour les commentaires de l'audit de contrôle
+    $style_array_control = $p01->getStyle('K4')->exportArray();
+    $style_array_control['font']['bold'] = FALSE;
 
     $anomaly_sheet->duplicateStyle($p01->getStyle('D4'), 'A4:C' . $highest_row);
     $anomaly_sheet->duplicateStyle($p01->getStyle('B4'), 'D4:E' . $highest_row);
@@ -124,7 +129,8 @@ class AuditDataAnalyser {
     $anomaly_sheet->duplicateStyle($p01->getStyle('G4'), 'G4:G' . $highest_row);
     $anomaly_sheet->duplicateConditionalStyle($p01->getConditionalStyles('G4'), 'G4:G' . $highest_row);
     $anomaly_sheet->duplicateStyle($p01->getStyle('G4'), 'H4:H' . $highest_row);
-    $anomaly_sheet->getStyle('I4:I' . $highest_row)->applyFromArray($style_array, FALSE);
+    $anomaly_sheet->getStyle('I4:I' . $highest_row)->applyFromArray($style_array_reco, FALSE);
+    $anomaly_sheet->getStyle('K4:K' . $highest_row)->applyFromArray($style_array_control, FALSE);
 
   }
 
@@ -138,10 +144,10 @@ class AuditDataAnalyser {
     $sheet_index = $this->spreadsheet->getIndex($anomaly_sheet);
     $sheet_length = $this->spreadsheet->getSheetCount();
 
-    $current_anamaly_row = $anomaly_sheet->getHighestDataRow();
+    $current_anomaly_row = $anomaly_sheet->getHighestDataRow();
 
     $anomalies = [];
-    // On parcours toutes les pages de relevé (P01, P02...).
+    // On parcourt toutes les pages de relevé (P01, P02...).
     while (++$sheet_index < $sheet_length) {
       $current_sheet = $this->spreadsheet->getSheet($sheet_index);
       $sheet_title = $current_sheet->getTitle();
@@ -173,25 +179,27 @@ class AuditDataAnalyser {
         $level = $current_sheet->getCell('C' . $row)->getValue();
         $recommendation = $current_sheet->getCell('D' . $row)->getValue();
         $status = $current_sheet->getCell('G' . $row)->getValue();
+        $control = $current_sheet->getCell('K' . $row)->getValue();
 
         // Ajout des commentaires traités à la liste.
         foreach ($comments as $comment) {
-          $current_anamaly_row++;
-          $anomaly_sheet->getCell('A' . $current_anamaly_row)->setValue($sheet_title);
-          $anomaly_sheet->getCell('B' . $current_anamaly_row)->setValue($sheet_heading);
-          $anomaly_sheet->getCell('C' . $current_anamaly_row)->setValue($theme);
-          $anomaly_sheet->getCell('D' . $current_anamaly_row)->setValue($criterion);
-          $anomaly_sheet->getCell('E' . $current_anamaly_row)->setValue($level);
-          $anomaly_sheet->getCell('F' . $current_anamaly_row)->setValue($recommendation);
-          $anomaly_sheet->getCell('G' . $current_anamaly_row)->setValue($status);
+          $current_anomaly_row++;
+          $anomaly_sheet->getCell('A' . $current_anomaly_row)->setValue($sheet_title);
+          $anomaly_sheet->getCell('B' . $current_anomaly_row)->setValue($sheet_heading);
+          $anomaly_sheet->getCell('C' . $current_anomaly_row)->setValue($theme);
+          $anomaly_sheet->getCell('D' . $current_anomaly_row)->setValue($criterion);
+          $anomaly_sheet->getCell('E' . $current_anomaly_row)->setValue($level);
+          $anomaly_sheet->getCell('F' . $current_anomaly_row)->setValue($recommendation);
+          $anomaly_sheet->getCell('G' . $current_anomaly_row)->setValue($status);
+          $anomaly_sheet->getCell('J' . $current_anomaly_row)->setValue($control);
 
           // Extraction du niveau de criticité.
           $matches = [];
           if (preg_match('/\[(bloquant|majeur|mineur)\]/i', $comment, $matches)) {
-            $anomaly_sheet->getCell('H' . $current_anamaly_row)->setValue($matches[1]);
+            $anomaly_sheet->getCell('H' . $current_anomaly_row)->setValue($matches[1]);
           }
 
-          $anomaly_sheet->getCell('I' . $current_anamaly_row)->setValue($comment);
+          $anomaly_sheet->getCell('I' . $current_anomaly_row)->setValue($comment);
         }
 
       }
@@ -359,7 +367,7 @@ class AuditDataAnalyser {
    * Suppression des données existantes.
    *
    * @param \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet $sheet
-   *   La feuill de synthèse des commentaires.
+   *   La feuille de synthèse des commentaires.
    */
   protected function emptyAnomalyList(Worksheet $sheet) {
     // On passe les entêtes.
