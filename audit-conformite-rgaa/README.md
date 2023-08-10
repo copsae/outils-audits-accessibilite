@@ -4,7 +4,7 @@ La grille d’audit est basée sur [la grille officielle de la DINUM disponible 
 
 La grille, au départ au format ODS, a été passée au format XLSX afin de la rendre compatible pour un traitement en PHP afin d’extraire la liste des anomalies dans un onglet dédié, grâce à [la Moulinette](/moulinette/).
 
-Ainsi, elle devrait être compatible avec LibreOffice Calc comme au départ, mais également, désormais, avec Excel.
+Ainsi, elle est compatible avec LibreOffice Calc comme au départ, mais elle devrait également, désormais, fonctionner avec Microsoft Excel. Elle est également compatible avec OnlyOffice.
 
 ## Points modifiés
 

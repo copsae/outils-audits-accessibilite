@@ -1,8 +1,8 @@
 # La Moulinette, automatiseur de liste d’anomalies
 
-La Moulinette est un outil développé par @mloyat pour Copsaé.
+La Moulinette est un outil développé par [@mloyat](https://github.com/mloyat) pour Copsaé.
 
-Cet outil permet de récupérer la liste de toutes les anomalies relevées dans une grille d’audit de conformité dans une seule feuille du tableur avec une ligne par anomalie.
+Cet outil permet de récupérer la liste de toutes les anomalies relevées dans [notre grille d’audit de conformité](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa) dans une seule feuille du tableur avec une ligne par anomalie.
 
 Ainsi, les anomalies peuvent être comptées facilement et sont filtrables par impact. Cela permet de faciliter la priorisation des corrections et, éventuellement, l’export dans un outil de gestion des tickets.
 

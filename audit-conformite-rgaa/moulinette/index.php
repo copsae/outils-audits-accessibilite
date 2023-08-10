@@ -59,7 +59,7 @@ if ($output_file) {
 
         <h2>Instructions préalables</h2>
         <ol>
-          <li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a>.</li>
+          <li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel).</li>
           <li>Pour que chaque anomalie soit bien séparée chacune sur une ligne distincte dans l’onglet « Liste anomalies » du tableur, <strong>chaque anomalie pour un même critère doit être séparée par une ligne vide dans la cellule</strong>.</li>
           <li>Afin que la colonne « Impact » soit correctement renseignée pour chaque anomalie, <strong>chacune doit avoir son impact renseigné au préalable</strong>. L’impact doit être rédigé comme suit :
             <ul>
