@@ -3,21 +3,22 @@
 namespace Copsae;
 
 use \Copsae\AbstractAuditDataAnalyser;
+use \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+use Symfony\Component\Yaml\Yaml;
 
 /**
- * @class
  * Analyse des données d'audit pour traitement des commentaires.
  */
-class AuditDataAnalyser extends AbstractAuditDataAnalyser {
+class AuditFlashDataAnalyser extends AbstractAuditDataAnalyser {
 
   /**
    * Collecte et centralisation des commentaires.
    */
   public function processAnomalyList() {
-    $this->prepareAnomalySheet();
     $this->collectAnomalyList();
     $this->applyStyles();
   }
+
 
   /**
    * Mise en forme de la liste anomalies.
@@ -31,18 +32,32 @@ class AuditDataAnalyser extends AbstractAuditDataAnalyser {
     // Récupération de la première page de relevé (P01).
     $p01 = $this->spreadsheet->getSheet($page_index + 1);
 
+
+    // N° de page.
+    $anomaly_sheet->duplicateStyle($p01->getStyle('B4'), 'A4:A' . $highest_row);
+    // Thématique, critères, n° de règle.
+    $anomaly_sheet->duplicateStyle($p01->getStyle('B4'), 'C4:E' . $highest_row);
+    // Statut.
+    $anomaly_sheet->duplicateStyle($p01->getStyle('F4'), 'G4:G' . $highest_row);
+    $anomaly_sheet->duplicateConditionalStyle($p01->getConditionalStyles('F4'), 'G4:G' . $highest_row);
+    // Impact.
+    $anomaly_sheet->duplicateStyle($p01->getStyle('B4'), 'H4:H' . $highest_row);
+
+    // Style par défaut pour les règles.
+    // On s'assure que les règles ne seront pas en bold par défaut.
+    $style_array = $p01->getStyle('C4')->exportArray();
+    $style_array['font']['bold'] = FALSE;
+    $style_array['alignment']['vertical'] = 'middle';
+    // print_r($style_array); die;
+    $anomaly_sheet->getStyle('B4:B' . $highest_row)->applyFromArray($style_array, FALSE);
+    $anomaly_sheet->getStyle('F4:F' . $highest_row)->applyFromArray($style_array, FALSE);
+
     // Style par défaut pour les commentaires.
     // On s'assure que les commentaires ne seront pas en bold par défaut.
-    $style_array = $p01->getStyle('I4')->exportArray();
+    $style_array = $p01->getStyle('G4')->exportArray();
     $style_array['font']['bold'] = FALSE;
-
-    $anomaly_sheet->duplicateStyle($p01->getStyle('D4'), 'A4:C' . $highest_row);
-    $anomaly_sheet->duplicateStyle($p01->getStyle('B4'), 'D4:E' . $highest_row);
-    $anomaly_sheet->duplicateStyle($p01->getStyle('D4'), 'F4:F' . $highest_row);
-    $anomaly_sheet->duplicateStyle($p01->getStyle('G4'), 'G4:G' . $highest_row);
-    $anomaly_sheet->duplicateConditionalStyle($p01->getConditionalStyles('G4'), 'G4:G' . $highest_row);
-    $anomaly_sheet->duplicateStyle($p01->getStyle('G4'), 'H4:H' . $highest_row);
-    $anomaly_sheet->getStyle('I4:J' . $highest_row)->applyFromArray($style_array, FALSE);
+    $style_array['alignment']['vertical'] = 'middle';
+    $anomaly_sheet->getStyle('I4:I' . $highest_row)->applyFromArray($style_array, FALSE);
 
   }
 
@@ -50,15 +65,12 @@ class AuditDataAnalyser extends AbstractAuditDataAnalyser {
    * Parcours des pages auditées et synthèse.
    */
   protected function collectAnomalyList() {
-
     $anomaly_sheet = $this->anomalySheet;
     $sheet_index = $this->spreadsheet->getIndex($anomaly_sheet);
     $sheet_length = $this->spreadsheet->getSheetCount();
 
+    $current_anomaly_row = $anomaly_sheet->getHighestDataRow();
 
-    $current_anomaly_row = self::ANOMALY_SHEET_HEADER_ROWS_COUNT;
-
-    $anomalies = [];
     // On parcours toutes les pages de relevé (P01, P02...).
     while (++$sheet_index < $sheet_length) {
       $current_sheet = $this->spreadsheet->getSheet($sheet_index);
@@ -79,39 +91,29 @@ class AuditDataAnalyser extends AbstractAuditDataAnalyser {
         }
 
         // Récupération des commentaires.
-        if (NULL == $value = $cells->get('I' . $row)->getValue()) {
+        if (NULL == $value = $cells->get('G' . $row)->getValue()) {
           continue;
         }
 
         // Séparation des commentaires le cas échéant.
         $comments = $this->extractComments($value);
 
-        // Récupération des commentaires de l'audit de contrôle
-        $value = $cells->get('K' . $row)->getValue();
-        $control_comments = $this->extractComments($value);
-
         // Récupération des autres données correspondant aux commentaires.
-        $criterion = $current_sheet->getCell('B' . $row)->getValue();
-        $level = $current_sheet->getCell('C' . $row)->getValue();
-        $recommendation = $current_sheet->getCell('D' . $row)->getValue();
-        $status = $current_sheet->getCell('G' . $row)->getValue();
+        $criterion = $current_sheet->getCell('D' . $row)->getValue();
+        // $level = $current_sheet->getCell('C' . $row)->getValue();
+        $rule_number = $current_sheet->getCell('B' . $row)->getValue();
+        $rule = $current_sheet->getCell('C' . $row)->getValue();
+        $status = $current_sheet->getCell('F' . $row)->getValue();
 
         // Ajout des commentaires traités à la liste.
-        foreach ($comments as $k => $comment) {
-
-          $control_value = $control_comments[$k] ?? '';
-
-          if(preg_match('/\[ok\]/i', $control_value)){
-            continue;
-          }
-
+        foreach ($comments as $comment) {
           $current_anomaly_row++;
           $anomaly_sheet->getCell('A' . $current_anomaly_row)->setValue($sheet_title);
           $anomaly_sheet->getCell('B' . $current_anomaly_row)->setValue($sheet_heading);
           $anomaly_sheet->getCell('C' . $current_anomaly_row)->setValue($theme);
           $anomaly_sheet->getCell('D' . $current_anomaly_row)->setValue($criterion);
-          $anomaly_sheet->getCell('E' . $current_anomaly_row)->setValue($level);
-          $anomaly_sheet->getCell('F' . $current_anomaly_row)->setValue($recommendation);
+          $anomaly_sheet->getCell('E' . $current_anomaly_row)->setValue($rule_number);
+          $anomaly_sheet->getCell('F' . $current_anomaly_row)->setValue($rule);
           $anomaly_sheet->getCell('G' . $current_anomaly_row)->setValue($status);
 
           // Extraction du niveau de criticité.
@@ -121,15 +123,11 @@ class AuditDataAnalyser extends AbstractAuditDataAnalyser {
           }
 
           $anomaly_sheet->getCell('I' . $current_anomaly_row)->setValue($comment);
-
-          $anomaly_sheet->getCell('J' . $current_anomaly_row)->setValue($control_value);
         }
 
       }
     }
 
-    // Écriture des données dans la feuille.
-    $anomaly_sheet->fromArray($anomalies, NULL, 'A4');
   }
 
 }

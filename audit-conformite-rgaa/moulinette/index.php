@@ -1,17 +1,28 @@
 <?php
 
-require './vendor/autoload.php';
+require 'vendor/autoload.php';
 
+use Copsae\AuditDataReader;
 use Copsae\AuditDataAnalyser;
 use Copsae\AuditDataWriter;
+use Copsae\AuditFlashDataAnalyser;
 
 $error = NULL;
 $output_file = NULL;
 try {
-  $analyser = new AuditDataAnalyser();
-  if ($analyser->checkRequirements()) {
+  $reader = new AuditDataReader();
+  if ($reader->loadFile()) {
+    $audit_type = $reader->getAuditType();
+    if ($audit_type == AuditDataReader::AUDIT_TYPE_COMPLIANCE) {
+      $analyser = new AuditDataAnalyser($reader->getSpreadsheet());
+    }
+    elseif ($audit_type == AuditDataReader::AUDIT_TYPE_FLASH) {
+      $analyser = new AuditFlashDataAnalyser($reader->getSpreadsheet());
+    }
     $analyser->processAnomalyList();
     $output_file = $analyser->getComputedSpreadsheet();
+    $output_file_name = $reader->getAuditFileName();
+    $output_format = AuditDataWriter::FORMAT_XLSX;
   }
 }
 catch (Exception $e) {
@@ -21,7 +32,7 @@ catch (Exception $e) {
 // Si un fichier a été traité, on le propose au téléchargement et on s'arrête là.
 if ($output_file) {
   $writer = new AuditDataWriter($output_file);
-  $writer->directBrowserOutput();
+  $writer->directBrowserOutput($output_file_name, $output_format);
   exit;
 }
 
@@ -60,26 +71,8 @@ if ($output_file) {
         <h2>Instructions préalables</h2>
         <ol>
           <li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel).</li>
-          <li>Pour que chaque anomalie soit bien séparée chacune sur une ligne distincte dans l’onglet « Liste anomalies » du tableur, <strong>chaque anomalie pour un même critère doit être séparée par une ligne vide dans la cellule</strong>.</li>
-          <li>Afin que la colonne « Impact » soit correctement renseignée pour chaque anomalie, <strong>chacune doit avoir son impact renseigné au préalable</strong>. L’impact doit être rédigé comme suit :
-            <ul>
-              <li><code>[Mineur] </code></li>
-              <li><code>[Majeur] </code></li>
-              <li><code>[Bloquant] </code></li>
-            </ul>
-          </li>
+          <li>Pour que la liste des anomalies soit correctement réalisée, certaines règles de syntaxe doivent être respectées (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…). Elles sont expliquées dans le mode d’emploi de la grille d’audit (dans l’onglet « Mode d’emploi » du tableur et également <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/README.md#ajouts-au-mode-demploi">dans le fichier README.md</a>).</li>
         </ol>
-
-        <h3>Exemple de contenu dans une cellule pour le critère 3.3</h3>
-        <blockquote>
-          <p><strong>1. [Majeur] Bouton de partage</strong> - Le bouton de partage est une icône en vert clair sur fond gris clair avec un ratio de 1.6:1 au lieu de 3:1. Utiliser un vert plus foncé.
-          <br /><br />
-          <strong>2. [Mineur] Popin de partage par mail</strong> - La croix de fermeture est transparente et, apparaissant sur le fond blanc de la popin, elle a alors un ratio de 2,7:1 au lieu de 3:1. Retirer la transparence pour l’icône.
-          <br /><br />
-          <strong>3. [Majeur] Retour haut de page</strong> - L’icône du lien de retour en haut de page est une flèche blanche sur un carré vert clair dont le ratio de contraste est de 1,9:1 au lieu de 3:1. Foncer le carré ou la flèche.</p>
-        </blockquote>
-        <p>Ces 3 anomalies seront découpées par la Moulinette pour former 3 lignes dans l’onglet « Liste anomalies » du tableur.</p>
-
 
         <h2>Passer la grille dans la Moulinette</h2>
 <?php if ($error !== NULL) :?>
@@ -110,6 +103,7 @@ if ($output_file) {
       <div class="container">
         <p>À titre d’information, les fichiers que vous mettez dans le champ de formulaire ne sont pas enregistrés sur notre serveur et le site ne récolte aucune statistique ou autre.</p>
         <p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est open-source.</a></p>
+        <p><a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version 2.0</a></p>
       </div>
     </footer>
   </body>
