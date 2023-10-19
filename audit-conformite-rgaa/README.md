@@ -102,4 +102,18 @@ Certains points restent à modifier :
 
 Une fois l’audit (initial ou de contrôle) terminé, passer la grille à [la Moulinette](https://moulinette.copsae.fr/) pour obtenir la liste des anomalies.
 
-**Point de vigilance :** pour que la liste des anomalies ressorte correctement, il y a des points de syntaxe à s’assurer qui sont documentés à l’étape 2 précédente (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…).
+**Informations importantes :**
+
+- Pour que la liste des anomalies ressorte correctement, il y a **des règles de syntaxe à respecter** qui sont documentés à l’étape 2 précédente (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…) ;
+- **Pour un audit initial :** à partir du moment où il y a un commentaire dans la colonne « [Impact] Problèmes relevés et recommandation », celui-ci se retrouvera dans l’onglet « Liste anomalies » même si le statut du critère est conforme ou non applicable. Ainsi, les notes complémentaires hors conformité seront listées également pour ne pas être oubliées ;
+- **Pour un audit de contrôle :** seuls les points qui n’ont pas la mention « [OK] » dans la colonne « Commentaires de l’audit de contrôle » partiront dans la liste des anomalies. Ainsi, **les points listés seront ceux qui n’ont pas un [OK] dans la colonne « Commentaires de l’audit de contrôle »** (soit, ils ont un [KO], soit un autre texte) et donc, les critères qui ont un commentaire dans la colonne « [Impact] Problèmes relevés et recommandation » sans avoir un [OK] associé.
+    Ainsi, si un critère contient plusieurs anomalies et que toutes ne sont pas vérifiées, il faudra le préciser. Exemple :
+    ```html
+    1. Non vérifiée. <!-- Cette anomalie est listée. -->
+
+    2. [OK] Corrigé <!-- Cette anomalie n’est pas listée. -->
+
+    3. [KO] Tel point n’est pas bon. <!-- Cette anomalie est listée. -->
+
+    3. Non vérifiée. <!-- Cette anomalie est listée. -->
+    ```
