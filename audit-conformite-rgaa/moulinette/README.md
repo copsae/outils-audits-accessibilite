@@ -14,3 +14,7 @@ Il y a deux solutions :
     - Vous devrez installer Composer et lancer la commande `composer install` à la racine du dossier « moulinette/ ».
 - Vous pouvez également utiliser directement l’outil en ligne à cette adresse : [moulinette.copsae.fr](https://moulinette.copsae.fr/).
     À titre d’information, les fichiers que vous mettez dans le champ de formulaire ne sont pas enregistrés sur notre serveur et le site ne récolte aucune statistique ou autre.
+
+## Quelles sont les règles de syntaxe pour que la Moulinette fonctionne bien ?
+
+Voir le mode d’emploi de la grille d’audit.

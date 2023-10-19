@@ -1,17 +1,28 @@
 <?php
 
-require './vendor/autoload.php';
+require 'vendor/autoload.php';
 
+use Copsae\AuditDataReader;
 use Copsae\AuditDataAnalyser;
 use Copsae\AuditDataWriter;
+use Copsae\AuditFlashDataAnalyser;
 
 $error = NULL;
 $output_file = NULL;
 try {
-  $analyser = new AuditDataAnalyser();
-  if ($analyser->checkRequirements()) {
+  $reader = new AuditDataReader();
+  if ($reader->loadFile()) {
+    $audit_type = $reader->getAuditType();
+    if ($audit_type == AuditDataReader::AUDIT_TYPE_COMPLIANCE) {
+      $analyser = new AuditDataAnalyser($reader->getSpreadsheet());
+    }
+    elseif ($audit_type == AuditDataReader::AUDIT_TYPE_FLASH) {
+      $analyser = new AuditFlashDataAnalyser($reader->getSpreadsheet());
+    }
     $analyser->processAnomalyList();
     $output_file = $analyser->getComputedSpreadsheet();
+    $output_file_name = $reader->getAuditFileName();
+    $output_format = AuditDataWriter::FORMAT_XLSX;
   }
 }
 catch (Exception $e) {
@@ -21,7 +32,7 @@ catch (Exception $e) {
 // Si un fichier a été traité, on le propose au téléchargement et on s'arrête là.
 if ($output_file) {
   $writer = new AuditDataWriter($output_file);
-  $writer->directBrowserOutput();
+  $writer->directBrowserOutput($output_file_name, $output_format);
   exit;
 }
 
@@ -110,6 +121,7 @@ if ($output_file) {
       <div class="container">
         <p>À titre d’information, les fichiers que vous mettez dans le champ de formulaire ne sont pas enregistrés sur notre serveur et le site ne récolte aucune statistique ou autre.</p>
         <p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est open-source.</a></p>
+        <p>Version 2.0</p>
       </div>
     </footer>
   </body>

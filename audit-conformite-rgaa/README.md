@@ -11,14 +11,14 @@ Ainsi, elle est compatible avec LibreOffice Calc comme au départ, mais elle dev
 Afin de faciliter notre travail d'audit, nous avons modifié les points suivants :
 
 - Dans l’onglet « Mode d’emploi » :
-    - Ajout d’une partie « Notes complémentaires ajoutées par Copsaé » ;
+    - Ajout d’une partie « Notes complémentaires ajoutées par Copsaé » à l’étape 2 ;
     - Modification du nombre de pages par défaut (de 20 à 30) ;
     - Ajout de l’étape 3.
 - Pour les onglets d’audit :
     - Ajout d’une colonne « Tests » (affichage de l’ensemble des tests RGAA pour chaque critère) ;
     - Ajout d’une colonne « Niveau » (A ou AA) ;
     - Ajout d’une colonne « Comment tester (outils) » ;
-    - Ajout d’une colonne « Commentaire de l’audit de contrôle » afin de faciliter le suivi ;
+    - Ajout d’une colonne « Commentaires de l’audit de contrôle » afin de faciliter le suivi ;
     - Renommage de la colonne « Modification à apporter » en « [Impact] Problèmes relevés et recommandation » ;
     - Ajout des filtres de colonnes ;
     - En-tête de colonnes : utilisation des en-têtes de colonne de l’onglet « Critères (modèle) » comme référence ;
@@ -59,10 +59,17 @@ Certains points restent à modifier :
 ### Étape 2
 
 - **Liste des problèmes relevés :** Pour chaque page et pour chaque règle, il faut indiquer, s’il y en a, la liste des problèmes relevés.
-    - Chaque problème peut avoir un impact différent pour les personnes handicapées. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)).
+    - Chaque problème peut avoir un impact différent pour les personnes handicapées. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)) (point important pour la Moulinette). Exemple : [Mineur], [Majeur], [Bloquant]
     - Indiquer ensuite le problème relevé en faisant une préconisation de correction technique sommaire. Un tableur n’étant pas approprié pour y faire figurer des préconisations longues, pour certaines non-conformités complexes, il peut ne pas être possible de mettre la préconisation détaillée précisément dans la grille. Cela pourra figurer dans le rapport d’audit ou bien nécessiter un accompagnement dédié : le préciser dans la grille quand c’est le cas.
 
         Si on le peut, mais cela demande plus de temps, il peut être mieux mettre les préconisations dans un document texte séparé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#doc-preco)).
+    - Exemple s’il n’y a qu’une seule anomalie pour un critère : « [Mineur] Le mot « webmaster » au niveau de l’adresse postale est un mot anglais qui doit être balisé comme tel : `<span lang="en">webmaster</span>` »
+    - S’il y a plusieurs anomalies pour un critère, on numérotera en amont (1. , 2. , 3. …) et on laissera une ligne vide entre chaque anomalie (point important pour la Moulinette). Exemple :
+        ```
+        1. [Mineur] Description de l’anomalie
+
+        2. [Majeur] Description de l’anomalie
+        ```
 - **Si la règle est non applicable pour raison d’exemption ou dérogation**, il est préférable d’indiquer les problèmes concernés dans la colonne listant les problèmes relevés en précisant quel problème concerne du contenu exempté ou dérogé (par exemple, en indiquant `[Exempté]` ou `[Dérogé]` en amont).
 - **Auditer les éléments transverses :** Nous utilisons l’onglet « P01 » pour auditer les éléments transverses au site (en-tête, pied de page, fil d’Ariane…). Les éléments concernés doivent être listés dans la colonne « Commentaire » de l’onglet « Échantillon ». Cela nous permet d’éviter d’auditer plusieurs fois les mêmes éléments.
 
@@ -79,9 +86,20 @@ Certains points restent à modifier :
     7. **Deuxième tableau :** faire de même que pour le premier tableau pour l’ajout de la colonne « P31 » et la modification du calcul du compte des dérogations (colonne « Total D »), en adaptant bien sûr les numéros de colonnes.
     8. Vérifier en modifiant les statuts de certains critères dans l’onglet « P31 » qu’ils sont bien pris en compte dans l’onglet « Synthèse » qui récupère automatiquement les résultats de la base de calcul.
 - **Audit de contrôle** : un audit de contrôle permet de vérifier la bonne implémentation des corrections demandées lors de l’audit initial. On ne refait pas un audit complet.
-    - **Si une anomalie est corrigée**, on la supprime de la grille. Si le critère ne contient pas d’autre anomalie, on change le statut du critère qui devient conforme ou non applicable (selon les cas). Dans tous les cas, on ajoute la mention de la suppression d'une anomalie (exemple : « 2 février 2023 : 1 anomalie corrigée et retirée ») dans la colonne « Commentaire de l’audit de contrôle » afin de faire le suivi et de pouvoir filtrer les retours.
-    - **Si une anomalie est partiellement corrigée ou pas corrigée**, il est possible que de nouveaux problèmes aient été créés. Dans ce cas, modifier les critères correspondants à ces nouveaux problèmes. Devant l’explication de la nouvelle anomalie, indiquer « [Nouveau] ». Dans la colonne « Commentaire de l’audit de contrôle », ajouter l’information « 2 février 2023 : 1 anomalie ajoutée ».
+    - Dupliquer le fichier d’audit initial pour en conserver la source initiale.
+    - Modifier l’onglet « Échantillon » : à la ligne « Contexte de l’audit : », la valeur doit être modifiée pour indiquer « Audit de contrôle du [date] ».
+    - **Si une anomalie est corrigée**, on la laisse dans la grille. Si le critère ne contient pas d’autre anomalie, on change le statut du critère qui devient conforme ou non applicable (selon les cas).
+        Dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [OK]  » puis on peut mettre un commentaire détaillé si besoin (point important pour la Moulinette).
+        Exemple : « [OK] Corrigé ».
+        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 1. [OK] Corrigé », en laissant une ligne vide entre chaque.
+    - **Si une anomalie est partiellement corrigée ou pas corrigée**, on laisse le descriptif initial de l’anomalie et le statut non conforme du critère. Dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [KO]  » puis on met un commentaire détaillé (point important pour la Moulinette).
+        Exemple : « [KO] Non corrigé pour "Découvrez le programme" ».
+        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 2. [KO] Non corrigé. Tel point reste à corriger. », en laissant une ligne vide entre chaque.
+    - **Si une anomalie est nouvelle**, on change le statut du critère concerné à non conforme si ce n’est pas déjà le cas. On ajoute un descriptif de l’anomalie dans la colonne « [Impact] Problèmes relevés et recommandation ». Et, dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [KO] Nouvelle anomalie » (point important pour la Moulinette).
+        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 3. [KO] Nouvelle anomalie », en laissant une ligne vide entre chaque.
 
 ### Étape 3
 
-Une fois l’audit terminé, passer la grille à [la Moulinette](https://moulinette.copsae.fr/) pour obtenir la liste des anomalies.
+Une fois l’audit (initial ou de contrôle) terminé, passer la grille à [la Moulinette](https://moulinette.copsae.fr/) pour obtenir la liste des anomalies.
+
+**Point de vigilance :** pour que la liste des anomalies ressorte correctement, il y a des points de syntaxe à s’assurer qui sont documentés à l’étape 2 précédente (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…).
