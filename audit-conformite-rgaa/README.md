@@ -97,6 +97,7 @@ Certains points restent à modifier :
     - **Si une anomalie est partiellement corrigée ou pas corrigée**, on laisse le descriptif initial de l’anomalie et le statut non conforme du critère. Dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [KO]  » puis on met un commentaire détaillé (point important pour la Moulinette).
 
         Exemple : « [KO] Non corrigé pour "Découvrez le programme" ».
+
         S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 2. [KO] Non corrigé. Tel point reste à corriger. », en laissant une ligne vide entre chaque ;
     - **Si une anomalie est nouvelle**, on change le statut du critère concerné à non conforme si ce n’est pas déjà le cas. On ajoute un descriptif de l’anomalie dans la colonne « [Impact] Problèmes relevés et recommandation ». Et, dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [KO] Nouvelle anomalie » (point important pour la Moulinette).
 
@@ -108,9 +109,9 @@ Une fois l’audit (initial ou de contrôle) terminé, passer la grille à [la M
 
 **Informations importantes :**
 
-- Pour que la liste des anomalies ressorte correctement, il y a **des règles de syntaxe à respecter** qui sont documentés à l’étape 2 précédente (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…) ;
+- Pour que la liste des anomalies ressorte correctement, il y a **des règles de syntaxe à respecter** qui sont documentées à l’étape 2 précédente (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…) ;
 - **Pour un audit initial :** à partir du moment où il y a un commentaire dans la colonne « [Impact] Problèmes relevés et recommandation », celui-ci se retrouvera dans l’onglet « Liste anomalies » même si le statut du critère est conforme ou non applicable. Ainsi, les notes complémentaires hors conformité seront listées également pour ne pas être oubliées ;
-- **Pour un audit de contrôle :** seuls les points qui n’ont pas la mention « [OK] » dans la colonne « Commentaires de l’audit de contrôle » partiront dans la liste des anomalies. Ainsi, **les points listés seront ceux qui n’ont pas un [OK] dans la colonne « Commentaires de l’audit de contrôle »** (soit, ils ont un [KO], soit un autre texte) et donc, les critères qui ont un commentaire dans la colonne « [Impact] Problèmes relevés et recommandation » sans avoir un [OK] associé.
+- **Pour un audit de contrôle :** seuls les points qui n’ont pas la mention « [OK] » dans la colonne « Commentaires de l’audit de contrôle » partiront dans la liste des anomalies. Ainsi, **les points listés seront ceux qui n’ont pas un [OK] dans la colonne « Commentaires de l’audit de contrôle »** (soit ils ont un [KO], soit un autre texte) et donc, les critères qui ont un commentaire dans la colonne « [Impact] Problèmes relevés et recommandation » sans avoir un [OK] associé.
     Ainsi, si un critère contient plusieurs anomalies et que toutes ne sont pas vérifiées, il faudra le préciser. Exemple :
     ```html
     1. Non vérifiée. <!-- Cette anomalie est listée. -->
