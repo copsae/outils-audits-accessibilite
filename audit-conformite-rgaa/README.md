@@ -59,10 +59,10 @@ Certains points restent à modifier :
 ### Étape 2
 
 - **Liste des problèmes relevés :** Pour chaque page et pour chaque règle, il faut indiquer, s’il y en a, la liste des problèmes relevés.
-    - Chaque problème peut avoir un impact différent pour les personnes handicapées. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)) (point important pour la Moulinette). Exemple : [Mineur], [Majeur], [Bloquant]
+    - Chaque problème peut avoir un impact différent pour les personnes handicapées. Ainsi, il convient d’indiquer, entre crochets et avant d’expliquer chaque problème, l’impact estimé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#impact)). Pour que l’impact soit correctement traité par la Moulinette (ajout dans une colonne dédiée dans la liste des anomalies), celui doit nécessairement s’écrire entre crochets et seuls les 3 cas suivants sont possibles : [Mineur], [Majeur], [Bloquant].
     - Indiquer ensuite le problème relevé en faisant une préconisation de correction technique sommaire. Un tableur n’étant pas approprié pour y faire figurer des préconisations longues, pour certaines non-conformités complexes, il peut ne pas être possible de mettre la préconisation détaillée précisément dans la grille. Cela pourra figurer dans le rapport d’audit ou bien nécessiter un accompagnement dédié : le préciser dans la grille quand c’est le cas.
 
-        Si on le peut, mais cela demande plus de temps, il peut être mieux mettre les préconisations dans un document texte séparé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#doc-preco)).
+        Si on le peut, mais cela demande plus de temps, il peut être mieux de mettre les préconisations dans un document texte séparé ([voir la documentation dédiée dans le README.md principal de ce dépôt GitHub](/../../#doc-preco)).
     - Exemple s’il n’y a qu’une seule anomalie pour un critère : « [Mineur] Le mot « webmaster » au niveau de l’adresse postale est un mot anglais qui doit être balisé comme tel : `<span lang="en">webmaster</span>` »
     - S’il y a plusieurs anomalies pour un critère, on numérotera en amont (1. , 2. , 3. …) et on laissera une ligne vide entre chaque anomalie (point important pour la Moulinette). Exemple :
         ```
