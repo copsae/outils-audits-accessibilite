@@ -7,4 +7,4 @@
 
 ## Version 1.0 — 29 juin 2023
 
-Ajout de [la Moulinette](/moulinette/), automatiseur de liste d’anomalies pour l’audit de conformité au RGAA.
+Ajout de [la Moulinette](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette), automatiseur de liste d’anomalies pour l’audit de conformité au RGAA.

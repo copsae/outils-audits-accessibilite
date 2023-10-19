@@ -2,7 +2,7 @@
 
 La grille d’audit est basée sur [la grille officielle de la DINUM disponible sur le site officiel du RGAA](https://accessibilite.numerique.gouv.fr/ressources/kit-audit/), document « placé sous [licence ouverte 2.0 ou ultérieure](https://www.etalab.gouv.fr/licence-ouverte-open-licence) » (voir les détails dans la grille).
 
-La grille, au départ au format ODS, a été passée au format XLSX afin de la rendre compatible pour un traitement en PHP afin d’extraire la liste des anomalies dans un onglet dédié, grâce à [la Moulinette](/moulinette/).
+La grille, au départ au format ODS, a été passée au format XLSX afin de la rendre compatible pour un traitement en PHP afin d’extraire la liste des anomalies dans un onglet dédié, grâce à [la Moulinette](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette).
 
 Ainsi, elle est compatible avec LibreOffice Calc comme au départ, mais elle devrait également, désormais, fonctionner avec Microsoft Excel. Elle est également compatible avec OnlyOffice.
 
@@ -46,7 +46,7 @@ Afin de faciliter notre travail d'audit, nous avons modifié les points suivants
     - Ajout d’un filtre pour cette colonne pour voir rapidement et lister les critères NC à l’échelle de l’échantillon (pour rédiger le rapport d’audit et pour les personnes qui vont corriger) ;
     - Ajout du formatage conditionnel pour les statuts de critères ;
     - En cellule C125, renommage de l’intitulé « TAUX MOYEN » en « Taux par onglet du tableur » (car il ne s’agit pas d’un taux moyen ni d’un taux par page, les éléments transverses n’étant pas propagés).
-- Ajout de l’onglet « Liste anomalies » pour [la Moulinette](/moulinette/).
+- Ajout de l’onglet « Liste anomalies » pour [la Moulinette](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette).
 
 ## Points restants à modifier
 

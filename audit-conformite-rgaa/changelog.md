@@ -4,8 +4,8 @@ Ce fichier liste les modifications dans les différentes versions de la grille d
 
 ## Version 4.1 — 19 octobre 2023
 
-- Dans l’onglet « Liste anomalies » : ajout de la colonne « Commentaires de l’audit de contrôle » pour un traitement automatisé par [la Moulinette](/moulinette/) ;
-- Dans l’onglet « Mode d’emploi » : 
+- Dans l’onglet « Liste anomalies » : ajout de la colonne « Commentaires de l’audit de contrôle » pour un traitement automatisé par [la Moulinette](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette) ;
+- Dans l’onglet « Mode d’emploi » :
     - Ajout de précisions concernant les règles de syntaxe pour que la Moulinette liste correctement les anomalies ;
     - Modification du fonctionnement pour les audits de contrôle, en lien avec la Moulinette.
 
@@ -14,7 +14,7 @@ Ce fichier liste les modifications dans les différentes versions de la grille d
 - Passage de la grille du format ODS vers XLSX afin de la rendre compatible pour un traitement en PHP afin d’extraire la liste des anomalies dans un onglet dédié ;
 - Dans la grille :
     - Dans l’onglet « Mode d’emploi » : ajout de l’étape 3 ;
-    - Ajout de l’onglet « Liste anomalies » pour [la Moulinette](/moulinette/) (Note : la Moulinette a son propre [changelog](/moulinette/changelog.md).).
+    - Ajout de l’onglet « Liste anomalies » pour [la Moulinette](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette) (Note : la Moulinette a son propre [changelog](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette/changelog.md).).
 
 ## Version 3.0 — 19 avril 2023
 
