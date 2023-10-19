@@ -86,16 +86,20 @@ Certains points restent à modifier :
     7. **Deuxième tableau :** faire de même que pour le premier tableau pour l’ajout de la colonne « P31 » et la modification du calcul du compte des dérogations (colonne « Total D »), en adaptant bien sûr les numéros de colonnes.
     8. Vérifier en modifiant les statuts de certains critères dans l’onglet « P31 » qu’ils sont bien pris en compte dans l’onglet « Synthèse » qui récupère automatiquement les résultats de la base de calcul.
 - **Audit de contrôle** : un audit de contrôle permet de vérifier la bonne implémentation des corrections demandées lors de l’audit initial. On ne refait pas un audit complet.
-    - Dupliquer le fichier d’audit initial pour en conserver la source initiale.
-    - Modifier l’onglet « Échantillon » : à la ligne « Contexte de l’audit : », la valeur doit être modifiée pour indiquer « Audit de contrôle du [date] ».
+    - Dupliquer le fichier d’audit initial pour en conserver la source initiale ;
+    - Modifier l’onglet « Échantillon » : à la ligne « Contexte de l’audit : », la valeur doit être modifiée pour indiquer « Audit de contrôle du [date] » ;
     - **Si une anomalie est corrigée**, on la laisse dans la grille. Si le critère ne contient pas d’autre anomalie, on change le statut du critère qui devient conforme ou non applicable (selon les cas).
+
         Dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [OK]  » puis on peut mettre un commentaire détaillé si besoin (point important pour la Moulinette).
         Exemple : « [OK] Corrigé ».
-        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 1. [OK] Corrigé », en laissant une ligne vide entre chaque.
+
+        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 1. [OK] Corrigé », en laissant une ligne vide entre chaque ;
     - **Si une anomalie est partiellement corrigée ou pas corrigée**, on laisse le descriptif initial de l’anomalie et le statut non conforme du critère. Dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [KO]  » puis on met un commentaire détaillé (point important pour la Moulinette).
+
         Exemple : « [KO] Non corrigé pour "Découvrez le programme" ».
-        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 2. [KO] Non corrigé. Tel point reste à corriger. », en laissant une ligne vide entre chaque.
+        S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 2. [KO] Non corrigé. Tel point reste à corriger. », en laissant une ligne vide entre chaque ;
     - **Si une anomalie est nouvelle**, on change le statut du critère concerné à non conforme si ce n’est pas déjà le cas. On ajoute un descriptif de l’anomalie dans la colonne « [Impact] Problèmes relevés et recommandation ». Et, dans la colonne « Commentaires de l’audit de contrôle », on indique en amont « [KO] Nouvelle anomalie » (point important pour la Moulinette).
+
         S’il y a plusieurs anomalies, on reprendra leur numéro associé. Exemple : « 3. [KO] Nouvelle anomalie », en laissant une ligne vide entre chaque.
 
 ### Étape 3
@@ -115,5 +119,5 @@ Une fois l’audit (initial ou de contrôle) terminé, passer la grille à [la M
 
     3. [KO] Tel point n’est pas bon. <!-- Cette anomalie est listée. -->
 
-    3. Non vérifiée. <!-- Cette anomalie est listée. -->
+    4. Non vérifiée. <!-- Cette anomalie est listée. -->
     ```
