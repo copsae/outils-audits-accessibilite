@@ -91,7 +91,8 @@ class AuditFlashDataAnalyser extends AbstractAuditDataAnalyser {
         }
 
         // Récupération des commentaires.
-        if (NULL == $value = $cells->get('G' . $row)->getValue()) {
+        $current_cell = $cells->get('G' . $row);
+        if (!$current_cell || NULL == $value = $current_cell->getValue()) {
           continue;
         }
 
