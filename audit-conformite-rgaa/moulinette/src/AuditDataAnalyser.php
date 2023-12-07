@@ -79,7 +79,8 @@ class AuditDataAnalyser extends AbstractAuditDataAnalyser {
         }
 
         // Récupération des commentaires.
-        if (NULL == $value = $cells->get('I' . $row)->getValue()) {
+        $current_cell = $cells->get('I' . $row);
+        if (!$current_cell || NULL == $value = $current_cell->getValue()) {
           continue;
         }
 
