@@ -1,5 +1,11 @@
 # La Moulinette — Liste des modifications
 
+## Version 2.1 — 7 décembre 2023
+
+**Correction [issue #33](https://github.com/copsae/outils-audits-accessibilite/issues/33) :** Sur certains relevés d'audits (rencontré sur une feuille créée sur Excel Mac), une case sans commentaire n'était pas toujours considérée comme une case vide mais comme non-existante ; ce qui générait une erreur lors de la génération de la grille avec la liste des anomalies.
+
+Un test a été ajouté pour vérifier que la case existe avant d'en vérifier la valeur.
+
 ## Version 2.0 — 19 octobre 2023
 
 - Prise en compte de la colonne « Commentaires de l’audit de contrôle » pour automatiser la liste d’anomalies suite à un audit de contrôle ;
