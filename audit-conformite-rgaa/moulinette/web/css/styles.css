@@ -1,23 +1,67 @@
-form{
-  margin:2em 0;
+/**
+ * Styles de la Moulinette
+ */
+.error {
+	padding: 2rem;
+	border: 0.2rem solid #a51404;
+	color: #a51404;
 }
 
-.error{
-  border:3px solid #DD6666;
-  background-color: #DD666666;
-  padding:2em;
+/**
+ * Surcharge de la CSS de Copsaé
+ */
+
+/* En-tête */
+.site-branding {
+	padding: 1rem 0;
 }
 
-form .field{
-  display: block;
-  margin-bottom:1.5em;
+.site-logo img {
+	display: inline-block;
 }
 
-label{
-  display: block;
+.copsae-logo {
+	margin-right: 2rem;
 }
 
-label .title{
-  display: block;
-  font-weight: bold;
+.site-logo {
+	width: 30%;
+}
+
+.site-description {
+	width: 70%;
+}
+
+/* Formulaire */
+.form-field-group {
+	margin-bottom: 3rem;
+}
+
+.form-label {
+	font-weight: bold;
+}
+
+.form-label-desc {
+	display: block;
+	font-weight: normal;
+}
+
+input[type="file"] {
+	font-size: 0.9em;
+}
+
+input[type="file"]::file-selector-button {
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	background-color: #FFF;
+	border: 0.2rem solid #266077;
+	color: #266077;
+	border-radius: 1rem;
+	font-weight: 700;
+}
+
+input[type="file"]::file-selector-button:hover,
+input[type="file"]::file-selector-button:focus {
+	background-color: #266077;
+	border-color: #FFF;
+	color: #FFF;
 }
