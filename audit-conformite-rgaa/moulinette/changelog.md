@@ -1,5 +1,9 @@
 # La Moulinette — Liste des modifications
 
+## Version 2.2 — 21 décembre 2023
+
+Adaptation de la charte graphique du site de la Moulinette à la nouvelle charte de Copsaé.
+
 ## Version 2.1 — 7 décembre 2023
 
 **Correction [issue #33](https://github.com/copsae/outils-audits-accessibilite/issues/33) :** Sur certains relevés d'audits (rencontré sur une feuille créée sur Excel Mac), une case sans commentaire n'était pas toujours considérée comme une case vide mais comme non-existante ; ce qui générait une erreur lors de la génération de la grille avec la liste des anomalies.
