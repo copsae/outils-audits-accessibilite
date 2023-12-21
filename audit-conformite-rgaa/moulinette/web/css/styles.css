@@ -1,23 +1,118 @@
-form{
-  margin:2em 0;
+/**
+ * Styles de la Moulinette
+ */
+.error {
+	padding: 2rem;
+	border: 0.2rem solid #a51404;
+	color: #a51404;
 }
 
-.error{
-  border:3px solid #DD6666;
-  background-color: #DD666666;
-  padding:2em;
+/**
+ * Surcharge de la CSS de Copsaé
+ */
+
+/* En-tête */
+.site-branding {
+	padding: 1rem 0;
 }
 
-form .field{
-  display: block;
-  margin-bottom:1.5em;
+.moulinette-title-description {
+	font-size: 2rem;
+	font-weight: normal;
 }
 
-label{
-  display: block;
+.site-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 0;
 }
 
-label .title{
-  display: block;
-  font-weight: bold;
+.site-logo img {
+	display: inline-block;
+	max-width: 9rem;
+}
+
+.copsae-logo {
+	margin-right: 2rem;
+}
+
+.site-description {
+	display: block;
+	margin-top: 1.5rem;
+	text-align: center;
+}
+
+@media screen and (min-width:29em) {
+	
+	.site-logo img {
+		max-width: 11rem;
+	}
+}
+
+@media screen and (min-width: 40em) {
+
+	.moulinette-title-description {
+		display: flex;
+		align-items: center;
+		column-gap: 2rem;
+	}
+
+	.site-logo {
+		justify-content: flex-start;
+	}
+
+	.site-logo img {
+		max-width: 13rem;
+	}
+
+	.site-description {
+		margin-top: 0;
+		text-align: left;
+	}
+}
+
+@media screen and (min-width:64em) {
+	
+	.moulinette-title-description {
+		font-size: 2.5rem
+	}
+
+	.site-logo img {
+		max-width: 16rem;
+	}
+}
+
+/* Formulaire */
+.form-field-group {
+	margin-bottom: 3rem;
+}
+
+.form-label {
+	font-weight: bold;
+}
+
+.form-label-desc {
+	display: block;
+	font-weight: normal;
+}
+
+input[type="file"] {
+	font-size: 0.9em;
+}
+
+input[type="file"]::file-selector-button {
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	background-color: #FFF;
+	border: 0.2rem solid #266077;
+	color: #266077;
+	border-radius: 1rem;
+	font-weight: 700;
+}
+
+input[type="file"]::file-selector-button:hover,
+input[type="file"]::file-selector-button:focus {
+	background-color: #266077;
+	border-color: #FFF;
+	color: #FFF;
 }
