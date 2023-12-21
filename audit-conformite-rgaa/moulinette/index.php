@@ -45,6 +45,7 @@ if ($output_file) {
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>La Moulinette, automatiseur de liste d’anomalies pour l’audit de conformité au RGAA | Copsaé</title>
+		<meta name="description" content="Cet outil récupère la liste de toutes les anomalies relevées dans une grille d’audit RGAA dans une seule feuille du tableur avec une ligne par anomalie.">
 		<link rel="stylesheet" type="text/css" href="./web/css/font-face.css" />
 		<link rel="stylesheet" type="text/css" href="https://www.copsae.fr/wp-content/themes/starter-theme-copsae-child/dist/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="./web/css/styles.css" />
