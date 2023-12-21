@@ -95,12 +95,13 @@ if ($output_file) {
 					</ol>
 
 					<h2>Passer la grille dans la Moulinette</h2>
-	<?php if ($error !== NULL) :?>
-					<div class="error" role="alert" id="error_message">
-						<p>L'erreur suivante s'est produite :</p>
-						<p><?php echo $error->getMessage();?></p>
-					</div>
-	<?php endif; // ($error !== NULL) :?>
+					
+					<?php if ($error !== NULL) :?>
+						<div class="error" role="alert" id="error_message">
+							<p>L'erreur suivante s'est produite :</p>
+							<p><?php echo $error->getMessage();?></p>
+						</div>
+					<?php endif; // ($error !== NULL) :?>
 
 					<form method="POST" enctype="multipart/form-data">
 						<p class="form-field-group">
