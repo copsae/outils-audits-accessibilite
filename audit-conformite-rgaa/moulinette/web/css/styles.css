@@ -16,20 +16,64 @@
 	padding: 1rem 0;
 }
 
+.moulinette-title-description {
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+	margin-right: 0;
+}
+
 .site-logo img {
 	display: inline-block;
+	max-width: 9rem;
 }
 
 .copsae-logo {
 	margin-right: 2rem;
 }
 
-.site-logo {
-	width: 30%;
+.site-description {
+	display: block;
+	margin-top: 1.5rem;
 }
 
-.site-description {
-	width: 70%;
+@media screen and (min-width:29em) {
+	
+	.site-logo img {
+		max-width: 11rem;
+	}
+}
+
+@media screen and (min-width: 40em) {
+
+	.moulinette-title-description {
+		display: flex;
+		align-items: center;
+		column-gap: 2rem;
+	}
+
+	.site-logo img {
+		max-width: 13rem;
+	}
+
+	.site-description {
+		margin-top: 0;
+	}
+}
+
+@media screen and (min-width:64em) {
+	
+	.moulinette-title-description {
+		font-size: 2.5rem
+	}
+
+	.site-logo img {
+		max-width: 16rem;
+	}
 }
 
 /* Formulaire */

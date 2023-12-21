@@ -64,7 +64,7 @@ if ($output_file) {
 		<header role="banner" class="site-header">
 			<div class="container">
 				<div class="site-branding">
-					<h1 class="site-title-description">
+					<h1 class="moulinette-title-description">
 						<span class="site-logo">
 							<img width="163" height="118" src="https://www.copsae.fr/wp-content/uploads/copsae-logo.svg" class="copsae-logo" alt="Copsaé">
 							<img src="https://www.copsae.fr/wp-content/uploads/icon-moulinette.svg" alt="" width="120" height="120">
