@@ -1,0 +1,47 @@
+/**
+ * Polices chargées localement (@font-face)
+ */
+
+/* Atkinson Hyperlegible Regular */
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: local(""),
+		 url("../assets/fonts/atkinsonhyperlegible-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url("../assets/fonts/atkinsonhyperlegible-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Atkinson Hyperlegible Italic */
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	font-style: italic;
+	font-weight: normal;
+	font-display: swap;
+	src: local(""),
+		 url("../assets/fonts/atkinsonhyperlegible-italic.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url("../assets/fonts/atkinsonhyperlegible-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Atkinson Hyperlegible Bold */
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	font-style: normal;
+	font-weight: bold;
+	font-display: swap;
+	src: local(""),
+		 url("../assets/fonts/atkinsonhyperlegible-bold.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url("../assets/fonts/atkinsonhyperlegible-bold.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Atkinson Hyperlegible Bold Italic */
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	font-style: italic;
+	font-weight: bold;
+	font-display: swap;
+	src: local(""),
+		 url("../assets/fonts/atkinsonhyperlegible-bolditalic.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url("../assets/fonts/atkinsonhyperlegible-bolditalic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
