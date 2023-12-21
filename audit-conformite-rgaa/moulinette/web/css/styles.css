@@ -24,6 +24,7 @@
 .site-logo {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	margin-right: 0;
 }
 
@@ -39,6 +40,7 @@
 .site-description {
 	display: block;
 	margin-top: 1.5rem;
+	text-align: center;
 }
 
 @media screen and (min-width:29em) {
@@ -56,12 +58,17 @@
 		column-gap: 2rem;
 	}
 
+	.site-logo {
+		justify-content: flex-start;
+	}
+
 	.site-logo img {
 		max-width: 13rem;
 	}
 
 	.site-description {
 		margin-top: 0;
+		text-align: left;
 	}
 }
 
