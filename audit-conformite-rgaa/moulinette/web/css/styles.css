@@ -88,31 +88,37 @@
 	margin-bottom: 3rem;
 }
 
-.form-label {
+.form-label-text {
+	display: block;
 	font-weight: bold;
 }
 
-.form-label-desc {
-	display: block;
-	font-weight: normal;
-}
-
-input[type="file"] {
-	font-size: 0.9em;
-}
-
-input[type="file"]::file-selector-button {
+/* Champ fichier */
+.form-label-file-btn {
+	display: inline-block;
+	margin-top: 1rem;
 	padding: 0.5rem 1rem 0.5rem 1rem;
 	background-color: #FFF;
+	border-radius: 1rem;
 	border: 0.2rem solid #266077;
 	color: #266077;
-	border-radius: 1rem;
-	font-weight: 700;
+	font-weight: bold;
+	font-size: 0.9em;
+	cursor: pointer;
 }
 
-input[type="file"]::file-selector-button:hover,
-input[type="file"]::file-selector-button:focus {
+.form-label-file:hover .form-label-file-btn,
+.form-label-file.has-focus .form-label-file-btn {
 	background-color: #266077;
 	border-color: #FFF;
 	color: #FFF;
+}
+
+.form-label-file.has-focus .form-label-file-btn {
+	outline: 0.2rem dashed #266077;
+}
+
+.form-file-information {
+	margin-top: 0.5rem;
+	font-size: 0.9em;
 }

@@ -91,27 +91,38 @@ if ($output_file) {
 
 					<h2>Instructions préalables</h2>
 					<ol>
-						<li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel).</li>
+						<li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel) ;</li>
 						<li>Pour que la liste des anomalies soit correctement réalisée, certaines règles de syntaxe doivent être respectées (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…). Elles sont expliquées dans le mode d’emploi de la grille d’audit (dans l’onglet « Mode d’emploi » du tableur et également <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/README.md#ajouts-au-mode-demploi">dans le fichier README.md</a>).</li>
 					</ol>
+					
+					<h2>Principes de fonctionnement</h2>
+					<ul>
+						<li><strong>La Moulinette modifie uniquement l’onglet « Liste anomalies » du tableur</strong> en y agrégeant les données des onglets d’audit des pages « PXX » ;</li>
+						<li><strong>Modifier l’onglet « Liste anomalies » après le passage à la Moulinette n’a pas d’incidence sur les autres onglets</strong> ni sur les calculs de la grille ;</li>
+						<li>Si la grille a déjà été passée à la Moulinette, un deuxième passage effacera le contenu de l’onglet « Liste anomalies » avant de le regénérer ;</li>
+						<li>Les fichiers envoyés dans le champ de formulaire ne sont pas enregistrés sur notre serveur.</li>
+					</ul>
 
 					<h2>Passer la grille dans la Moulinette</h2>
-					
+
 					<?php if ($error !== NULL) :?>
 						<div class="error" role="alert" id="error_message">
-							<p>L'erreur suivante s'est produite :</p>
+							<p>L'erreur suivante s’est produite :</p>
 							<p><?php echo $error->getMessage();?></p>
 						</div>
 					<?php endif; // ($error !== NULL) :?>
 
 					<form method="POST" enctype="multipart/form-data">
-						<p class="form-field-group">
-							<label for="spreadsheet" class="form-label">
-								Choisissez le fichier de grille d'audit à analyser (format .xlsx)
-								<span class="form-label-desc">Il s'agit du fichier .xlsx que vous avez rempli, qui va être analysé et modifié automatiquement.</span>
+						<div class="form-field-group">
+							<label for="spreadsheet" id="form-label-file" class="form-label form-label-file">
+								<span class="form-label-text">Choisissez le fichier de grille d’audit à modifier (format .xlsx)</span>
+								<span class="form-label-file-btn">Parcourir…</span>
 							</label>
-							<input type="file" accept=".xlsx" name="spreadsheet" id="spreadsheet" />
-						</p>
+							<input type="file" accept=".xlsx" name="spreadsheet" id="spreadsheet" class="form-field-file screen-reader-text" aria-labelledby="form-label-file form-file-information" />
+
+							<!-- role="alert" pour assurer la lecture par les lecteurs d’écran quand un fichier est sélectionné -->
+							<p class="form-file-information" id="form-file-information" role="alert">Aucun fichier sélectionné.</p>
+						</div><!-- .field-file-wrapper -->
 
 						<input type="hidden" name="action" value="process" />
 						<input type="text" id="piege_a_mouche" name="piege_a_mouche" style="display:none;" />
@@ -127,11 +138,15 @@ if ($output_file) {
 		<footer role="contentinfo" class="site-footer" data-bg="dark">
 			<div class="container">
 				<div class="small-container">
-					<p>À titre d’information, les fichiers que vous mettez dans le champ de formulaire ne sont pas enregistrés sur notre serveur et le site ne récolte aucune statistique ou autre.</p>
-					<p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est <i lang="en">open-source</i></a>. <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version actuelle : 2.2</a></p>
-					<p>Un site réalisé par <a href="https://www.copsae.fr">Copsaé</a>. <a href="https://www.copsae.fr/mentions-legales/">Mentions légales</a></p>
+					<p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est <i lang="en">open-source</i></a>. <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version actuelle : 2.3</a></p>
+					<p>Un site réalisé par <a href="https://www.copsae.fr">Copsaé</a>.</p>
+					<p>Ce site ne récolte aucune statistique et n’utilise pas de <i lang="en">cookies</i>. <a href="https://www.copsae.fr/mentions-legales/">Mentions légales</a></p>
 				</div><!-- .small-container -->
 			</div><!-- .container -->
 		</footer>
+
+		<script src="https://www.copsae.fr/wp-content/themes/starter-theme-copsae/src/js/vanilla-detect-safari.js"></script>
+		<script src="./web/js/jquery-3.7.1.min.js"></script>
+		<script src="./web/js/jquery-input-file-a11y.js"></script>
 	</body>
 </html>
