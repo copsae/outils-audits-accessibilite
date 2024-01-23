@@ -3,7 +3,8 @@
 ## Version 2.3 — 23 janvier 2024
 
 - **Correction [issue #35](https://github.com/copsae/outils-audits-accessibilite/issues/35) :** Les sauts de ligne dans les recommandations n’étaient pas conservés ;
-- Ajout des principes de fonctionnement sur la page web.
+- Ajout des principes de fonctionnement sur la page web ;
+- Accessibilité du champ de téléversement du fichier améliorée.
 
 ## Version 2.2 — 21 décembre 2023
 

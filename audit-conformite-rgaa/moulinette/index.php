@@ -107,19 +107,22 @@ if ($output_file) {
 
 					<?php if ($error !== NULL) :?>
 						<div class="error" role="alert" id="error_message">
-							<p>L'erreur suivante s'est produite :</p>
+							<p>L'erreur suivante s’est produite :</p>
 							<p><?php echo $error->getMessage();?></p>
 						</div>
 					<?php endif; // ($error !== NULL) :?>
 
 					<form method="POST" enctype="multipart/form-data">
-						<p class="form-field-group">
-							<label for="spreadsheet" class="form-label">
-								Choisissez le fichier de grille d'audit à analyser (format .xlsx)
-								<span class="form-label-desc">Il s'agit du fichier .xlsx que vous avez rempli, qui va être analysé et modifié automatiquement.</span>
+						<div class="form-field-group">
+							<label for="spreadsheet" id="form-label-file" class="form-label form-label-file">
+								<span class="form-label-text">Choisissez le fichier de grille d’audit à modifier (format .xlsx)</span>
+								<span class="form-label-file-btn">Parcourir…</span>
 							</label>
-							<input type="file" accept=".xlsx" name="spreadsheet" id="spreadsheet" />
-						</p>
+							<input type="file" accept=".xlsx" name="spreadsheet" id="spreadsheet" class="form-field-file screen-reader-text" aria-labelledby="form-label-file form-file-information" />
+
+							<!-- role="alert" pour assurer la lecture par les lecteurs d’écran quand un fichier est sélectionné -->
+							<p class="form-file-information" id="form-file-information" role="alert">Aucun fichier sélectionné.</p>
+						</div><!-- .field-file-wrapper -->
 
 						<input type="hidden" name="action" value="process" />
 						<input type="text" id="piege_a_mouche" name="piege_a_mouche" style="display:none;" />
@@ -141,5 +144,9 @@ if ($output_file) {
 				</div><!-- .small-container -->
 			</div><!-- .container -->
 		</footer>
+
+		<script src="https://www.copsae.fr/wp-content/themes/starter-theme-copsae/src/js/vanilla-detect-safari.js"></script>
+		<script src="./web/js/jquery-3.7.1.min.js"></script>
+		<script src="./web/js/jquery-input-file-a11y.js"></script>
 	</body>
 </html>
