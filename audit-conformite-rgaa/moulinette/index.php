@@ -91,14 +91,14 @@ if ($output_file) {
 
 					<h2>Instructions préalables</h2>
 					<ol>
-						<li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel).</li>
+						<li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel) ;</li>
 						<li>Pour que la liste des anomalies soit correctement réalisée, certaines règles de syntaxe doivent être respectées (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…). Elles sont expliquées dans le mode d’emploi de la grille d’audit (dans l’onglet « Mode d’emploi » du tableur et également <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/README.md#ajouts-au-mode-demploi">dans le fichier README.md</a>).</li>
 					</ol>
 					
 					<h2>Principes de fonctionnement</h2>
 					<ul>
-						<li>La Moulinette modifie uniquement l’onglet « Liste anomalies » du tableur en y agrégeant les données des onglets d’audit des pages « PXX » ;</li>
-						<li>Modifier l’onglet « Liste anomalies » après le passage à la Moulinette n’a pas d’incidence sur les autres onglets ni sur les calculs de la grille ;</li>
+						<li><strong>La Moulinette modifie uniquement l’onglet « Liste anomalies » du tableur</strong> en y agrégeant les données des onglets d’audit des pages « PXX » ;</li>
+						<li><strong>Modifier l’onglet « Liste anomalies » après le passage à la Moulinette n’a pas d’incidence sur les autres onglets</strong> ni sur les calculs de la grille ;</li>
 						<li>Si la grille a déjà été passée à la Moulinette, un deuxième passage effacera le contenu de l’onglet « Liste anomalies » avant de le regénérer ;</li>
 						<li>Les fichiers envoyés dans le champ de formulaire ne sont pas enregistrés sur notre serveur.</li>
 					</ul>
