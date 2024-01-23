@@ -219,7 +219,6 @@ class AbstractAuditDataAnalyser {
       $sub_texts = preg_split("/\n\n/", $txt);
       $l = count($sub_texts);
       foreach ($sub_texts as $n => $sub_text) {
-        $sub_text = str_replace("\n", "", $sub_text);
         if ($n < $l - 1){
           $sub_text .= "\n\n";
         }
