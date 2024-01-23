@@ -94,9 +94,17 @@ if ($output_file) {
 						<li>La Moulinette ne fonctionne qu’avec <a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa">la grille d’audit de conformité au RGAA créée par Copsaé, au format XLSX</a> (compatible avec LibreOffice, OnlyOffice et, normalement, Microsoft Excel).</li>
 						<li>Pour que la liste des anomalies soit correctement réalisée, certaines règles de syntaxe doivent être respectées (sauts de ligne, notation de l’impact, notation du statut corrigé ou non lors de l’audit de contrôle…). Elles sont expliquées dans le mode d’emploi de la grille d’audit (dans l’onglet « Mode d’emploi » du tableur et également <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/README.md#ajouts-au-mode-demploi">dans le fichier README.md</a>).</li>
 					</ol>
+					
+					<h2>Principes de fonctionnement</h2>
+					<ul>
+						<li>La Moulinette modifie uniquement l’onglet « Liste anomalies » du tableur en y agrégeant les données des onglets d’audit des pages « PXX » ;</li>
+						<li>Modifier l’onglet « Liste anomalies » après le passage à la Moulinette n’a pas d’incidence sur les autres onglets ni sur les calculs de la grille ;</li>
+						<li>Si la grille a déjà été passée à la Moulinette, un deuxième passage effacera le contenu de l’onglet « Liste anomalies » avant de le regénérer ;</li>
+						<li>Les fichiers envoyés dans le champ de formulaire ne sont pas enregistrés sur notre serveur.</li>
+					</ul>
 
 					<h2>Passer la grille dans la Moulinette</h2>
-					
+
 					<?php if ($error !== NULL) :?>
 						<div class="error" role="alert" id="error_message">
 							<p>L'erreur suivante s'est produite :</p>
@@ -127,9 +135,9 @@ if ($output_file) {
 		<footer role="contentinfo" class="site-footer" data-bg="dark">
 			<div class="container">
 				<div class="small-container">
-					<p>À titre d’information, les fichiers que vous mettez dans le champ de formulaire ne sont pas enregistrés sur notre serveur et le site ne récolte aucune statistique ou autre.</p>
-					<p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est <i lang="en">open-source</i></a>. <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version actuelle : 2.2</a></p>
-					<p>Un site réalisé par <a href="https://www.copsae.fr">Copsaé</a>. <a href="https://www.copsae.fr/mentions-legales/">Mentions légales</a></p>
+					<p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est <i lang="en">open-source</i></a>. <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version actuelle : 2.3</a></p>
+					<p>Un site réalisé par <a href="https://www.copsae.fr">Copsaé</a>.</p>
+					<p>Ce site ne récolte aucune statistique et n’utilise pas de <i lang="en">cookies</i>. <a href="https://www.copsae.fr/mentions-legales/">Mentions légales</a></p>
 				</div><!-- .small-container -->
 			</div><!-- .container -->
 		</footer>
