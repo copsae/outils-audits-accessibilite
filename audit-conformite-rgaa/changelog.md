@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 4.2 — 17 décembre 2025
+
+Ajout de lignes dans le modèle et chaque onglet « Pxx » afin de pouvoir indiquer des problèmes relevés hors RGAA. Ils apparaîtront également dans l’onglet de liste des anomalies générées via la Moulinette.
+
 ## Version 4.1 — 19 octobre 2023
 
 - Dans l’onglet « Liste anomalies » : ajout de la colonne « Commentaires de l’audit de contrôle » pour un traitement automatisé par [la Moulinette](https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette) ;
