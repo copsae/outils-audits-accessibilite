@@ -1,5 +1,12 @@
 # La Moulinette — Liste des modifications
 
+## Version 2.4 — 24 juin 2026
+
+Compatibilité avec les versions de PHP 8.4 et 8.5 désormais assurée :
+
+- Mise à jour de la bibliothèque « phpoffice/phpspreadsheet » (via la commande `composer require phpoffice/phpspreadsheet`) ;
+- Correction d’une dépréciation en PHP 8.4 (<span lang="en">[Implicitly marking parameter as nullable is deprecated, the explicit nullable type must be used instead](https://dev.to/gromnan/fix-php-84-deprecation-implicitly-marking-parameter-as-nullable-is-deprecated-the-explicit-nullable-type-must-be-used-instead-5gp3)</span>).
+
 ## Version 2.3 — 23 janvier 2024
 
 - **Correction [issue #35](https://github.com/copsae/outils-audits-accessibilite/issues/35) :** Les sauts de ligne dans les recommandations n’étaient pas conservés ;

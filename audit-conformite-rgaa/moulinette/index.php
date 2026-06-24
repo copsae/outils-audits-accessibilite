@@ -138,7 +138,7 @@ if ($output_file) {
 		<footer role="contentinfo" class="site-footer" data-bg="dark">
 			<div class="container">
 				<div class="small-container">
-					<p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est <i lang="en">open-source</i></a>. <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version actuelle : 2.3</a></p>
+					<p><a href="https://github.com/copsae/outils-audits-accessibilite/tree/main/audit-conformite-rgaa/moulinette" class="page-link-item">La Moulinette est <i lang="en">open-source</i></a>. <a href="https://github.com/copsae/outils-audits-accessibilite/blob/main/audit-conformite-rgaa/moulinette/changelog.md" class="page-link-item">Version actuelle : 2.4</a></p>
 					<p>Un site réalisé par <a href="https://www.copsae.fr">Copsaé</a>.</p>
 					<p>Ce site ne récolte aucune statistique et n’utilise pas de <i lang="en">cookies</i>. <a href="https://www.copsae.fr/mentions-legales/">Mentions légales</a></p>
 				</div><!-- .small-container -->

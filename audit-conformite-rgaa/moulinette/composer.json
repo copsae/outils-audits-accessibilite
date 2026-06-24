@@ -1,6 +1,6 @@
 {
     "require": {
-        "phpoffice/phpspreadsheet": "^1.28"
+        "phpoffice/phpspreadsheet": "^5.8"
     },
     "autoload": {
         "psr-4": {"Copsae\\": "src/"}

@@ -52,7 +52,7 @@ class AuditDataWriter {
    * @param string $$format
    *   Le format du fichier de sortie.
    */
-  public function directBrowserOutput(string $file_name = NULL, string $format = self::FORMAT_XLSX) {
+  public function directBrowserOutput(?string $file_name = NULL, string $format = self::FORMAT_XLSX) {
 
     // Nom du fichier à renvoyer à l'utilisateur.
     if ($file_name) {
