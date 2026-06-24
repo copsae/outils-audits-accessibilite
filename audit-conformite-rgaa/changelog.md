@@ -2,6 +2,10 @@
 
 Ce fichier liste les modifications dans les différentes versions de la grille d’audit.
 
+## Version 4.3 — 24 juin 2026
+
+Ajustements des alignements dans les cellules (alignement en haut et à gauche).
+
 ## Version 4.2 — 17 décembre 2025
 
 Ajout de lignes dans le modèle et chaque onglet « Pxx » afin de pouvoir indiquer des problèmes relevés hors RGAA. Ils apparaîtront également dans l’onglet de liste des anomalies générées via la Moulinette.
