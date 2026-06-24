@@ -1,5 +1,9 @@
 # La Moulinette — Liste des modifications
 
+## Version 2.4 — 24 juin 2026
+
+Compatibilité avec les versions de PHP 8.4 et 8.5 désormais assurée.
+
 ## Version 2.3 — 23 janvier 2024
 
 - **Correction [issue #35](https://github.com/copsae/outils-audits-accessibilite/issues/35) :** Les sauts de ligne dans les recommandations n’étaient pas conservés ;
